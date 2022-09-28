@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card } from './components/elements/card';
+import { Card } from './components/composed/card';
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { Image } from './components/elements/image';
