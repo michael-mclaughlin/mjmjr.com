@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface SectionContainerFlexProps {
+interface HeaderFlexProps {
     children: React.ReactNode;
     className: string;
-    styleProps?: FlexProps;
+    flexProps?: FlexProps;
 }
 type FlexFlow =
     | 'row'
     | 'row-reverse'
     | 'column'
     | 'column-reverse'
-    | 'row wrap'
+    | 'wrap'
     | 'no-wrap';
 type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'stretch';
 type JustifyContent =
@@ -30,18 +30,18 @@ interface FlexProps {
     justifySelf?: JustifySelf;
 }
 
-export const SectionContainerFlex: React.FC<SectionContainerFlexProps> = (
-    props: SectionContainerFlexProps
+export const HeaderFlex: React.FC<HeaderFlexProps> = (
+    props: HeaderFlexProps
 ) => {
-    const { children, className, styleProps } = props;
+    const { children, className, flexProps } = props;
     return (
-        <Section style={styleProps} className={className}>
+        <HeaderContainer style={flexProps} className={className}>
             {children}
-        </Section>
+        </HeaderContainer>
     );
 };
 
-const Section = styled.section`
+const HeaderContainer = styled.header`
     margin: 0;
     padding: 0;
     display: flex;

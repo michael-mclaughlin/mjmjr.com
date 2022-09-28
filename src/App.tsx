@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Card } from './components/elements/card';
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
+import { Image } from './components/elements/image';
+import { Grid } from './components/layout/grid-container';
 import './scss/App.scss';
 
 interface Data {
@@ -23,7 +25,7 @@ const App = () => {
         const options = {
             method: 'GET',
             url: 'https://movie-database-alternative.p.rapidapi.com/',
-            params: { s: 'Avengers Endgame', r: 'json', page: '1' },
+            params: { s: 'string', r: 'json', page: '1' },
             headers: {
                 'X-RapidAPI-Key':
                     '3aa438caadmsh2c5c4513101ec61p17d727jsnfedea0cc8536',
@@ -34,7 +36,6 @@ const App = () => {
         const response = await axios
             .request(options)
             .then(function (response) {
-                console.log(response.data);
                 setUserData(response.data);
             })
             .catch(function (error) {
@@ -48,32 +49,84 @@ const App = () => {
 
     console.log('userData', userData);
 
+    const poster = userData?.Search.map((d) => d.Poster);
+    const posterArray = poster || [];
+    const posterNAArray: string[] = [];
+    const findNAPoster = () => {
+        for (let i = 0; i < posterArray.length; i++) {
+            if (posterArray[i] === 'N/A') {
+                posterNAArray.push(posterArray[i]);
+            }
+        }
+    };
+    findNAPoster();
+    const notAvailable = posterNAArray.find((img) => img);
     return (
         <AppContainer className="App">
             <SectionContainerFlex
-                flexProps={{ flexFlow: 'row' }}
+                styleProps={{ flexFlow: 'row wrap' }}
                 className="user-container"
             >
-                {userData?.Search.map((d, index) => {
-                    return (
-                        <Card
-                            id={`${d.imdbID}-${index}`}
-                            className="movie-card"
-                            title={d.Title}
-                            footerChildren={
-                                <div>
-                                    <div>{d.imdbID}</div>
-                                    <div>{d.Year}</div>
-                                </div>
-                            }
-                        >
-                            {<img src={d.Poster} alt={d.Title} />}
-                        </Card>
-                    );
-                })}
+                <Grid className="grid-container">
+                    {userData?.Search.map((d, index) => {
+                        return (
+                            <Card
+                                id={`${d.imdbID}-${index}`}
+                                className="movie-card"
+                                title={d.Title}
+                                headingSize="1rem"
+                                footerChildren={
+                                    <div className="metadata-container">
+                                        <div>{d.imdbID}</div>
+                                        <div>{d.Year}</div>
+                                        <div>{d.Type}</div>
+                                    </div>
+                                }
+                            >
+                                {d.Poster === notAvailable ? (
+                                    'No data avaliable'
+                                ) : (
+                                    <Image
+                                        src={d.Poster}
+                                        alt={d.Title}
+                                        width="6.25rem"
+                                    />
+                                )}
+                            </Card>
+                        );
+                    })}
+                </Grid>
+                <Grid className="grid-container">
+                    {userData?.Search.map((d, index) => {
+                        return (
+                            <Card
+                                id={`${d.imdbID}-${index}`}
+                                className="movie-card"
+                                title={d.Title}
+                                headingSize="1rem"
+                                footerChildren={
+                                    <div className="metadata-container">
+                                        <div>{d.imdbID}</div>
+                                        <div>{d.Year}</div>
+                                        <div>{d.Type}</div>
+                                    </div>
+                                }
+                            >
+                                {d.Poster === notAvailable ? (
+                                    'No data avaliable'
+                                ) : (
+                                    <Image
+                                        src={d.Poster}
+                                        alt={d.Title}
+                                        width="6.25rem"
+                                    />
+                                )}
+                            </Card>
+                        );
+                    })}
+                </Grid>
             </SectionContainerFlex>
         </AppContainer>
     );
 };
-
 export default App;
