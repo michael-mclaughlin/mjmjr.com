@@ -96,35 +96,6 @@ const App = () => {
                         );
                     })}
                 </Grid>
-                <Grid className="grid-container">
-                    {userData?.Search.map((d, index) => {
-                        return (
-                            <Card
-                                id={`${d.imdbID}-${index}`}
-                                className="movie-card"
-                                title={d.Title}
-                                headingSize="1rem"
-                                footerChildren={
-                                    <div className="metadata-container">
-                                        <div>{d.imdbID}</div>
-                                        <div>{d.Year}</div>
-                                        <div>{d.Type}</div>
-                                    </div>
-                                }
-                            >
-                                {d.Poster === notAvailable ? (
-                                    'No data avaliable'
-                                ) : (
-                                    <Image
-                                        src={d.Poster}
-                                        alt={d.Title}
-                                        width="6.25rem"
-                                    />
-                                )}
-                            </Card>
-                        );
-                    })}
-                </Grid>
             </SectionContainerFlex>
         </AppContainer>
     );
