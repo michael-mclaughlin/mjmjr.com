@@ -1,6 +1,43 @@
+.App {
+    font-family: Helvetica, Arial, sans-serif;
+}
 .metadata-container {
     align-self: flex-end;
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.logo-heading-container {
+    display: flex;
+    flex-flow: column;
+
+    .heading-description {
+        margin: 0.25rem 0 0 0;
+        padding: 0;
+    }
+}
+
+.contact-info-container {
+    color: #ffffff;
+
+    .contact-info-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 0.875rem;
+
+        .contact-info-item {
+            margin: 0.15rem 0;
+
+            .contact-info-link {
+                color: #ffffff;
+                transition: font-size 0.5s, color 0.5s;
+                &:hover {
+                    color: red;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 }

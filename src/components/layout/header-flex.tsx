@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface HeaderFlexProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className: string;
-    flexProps?: FlexProps;
+    styleProps?: FlexProps;
 }
 type FlexFlow =
     | 'row'
@@ -28,14 +28,20 @@ interface FlexProps {
     alignItems?: AlignItems;
     justifyContent?: JustifyContent;
     justifySelf?: JustifySelf;
+    backgroundColor?: string;
+    border?: string;
+    margin?: string;
+    padding?: string;
+    width?: string;
+    height?: string;
 }
 
 export const HeaderFlex: React.FC<HeaderFlexProps> = (
     props: HeaderFlexProps
 ) => {
-    const { children, className, flexProps } = props;
+    const { children, className, styleProps } = props;
     return (
-        <HeaderContainer style={flexProps} className={className}>
+        <HeaderContainer style={styleProps} className={className}>
             {children}
         </HeaderContainer>
     );
