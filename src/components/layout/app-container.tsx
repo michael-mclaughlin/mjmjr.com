@@ -13,7 +13,7 @@ export const AppContainer: React.FC<AppContainerProps> = (
     return <Body>{children}</Body>;
 };
 
-const Body = styled.body`
+const Body = styled.section`
     margin: 0;
     padding: 0;
     display: flex;

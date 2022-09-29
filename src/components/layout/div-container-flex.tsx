@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface HeaderFlexProps {
-    children?: React.ReactNode;
+interface DivContainerFlexProps {
+    children: React.ReactNode;
     className: string;
     styleProps?: FlexProps;
 }
@@ -11,7 +11,7 @@ type FlexFlow =
     | 'row-reverse'
     | 'column'
     | 'column-reverse'
-    | 'wrap'
+    | 'row wrap'
     | 'no-wrap';
 type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'stretch';
 type JustifyContent =
@@ -23,6 +23,21 @@ type JustifyContent =
     | 'space-evenly';
 
 type JustifySelf = 'stretch' | 'center' | 'start' | 'end';
+interface FlexProps {
+    flexFlow?: FlexFlow;
+    alignItems?: AlignItems;
+    justifyContent?: JustifyContent;
+    justifySelf?: JustifySelf;
+    position?: Position;
+    padding?: string;
+    margin?: string;
+    width?: string;
+    height?: string;
+    backgroundColor?: string;
+    color?: string;
+    borderRadius?: string;
+    boxShadow?: string;
+}
 
 type Position =
     | 'static'
@@ -32,35 +47,19 @@ type Position =
     | 'sticky'
     | 'initial'
     | 'inherit';
-interface FlexProps {
-    flexFlow?: FlexFlow;
-    alignItems?: AlignItems;
-    justifyContent?: JustifyContent;
-    justifySelf?: JustifySelf;
-    backgroundColor?: string;
-    border?: string;
-    margin?: string;
-    padding?: string;
-    width?: string;
-    height?: string;
-    position?: Position;
-    color?: string;
-    borderRadius?: string;
-    boxShadow?: string;
-}
 
-export const HeaderFlex: React.FC<HeaderFlexProps> = (
-    props: HeaderFlexProps
+export const DivContainerFlex: React.FC<DivContainerFlexProps> = (
+    props: DivContainerFlexProps
 ) => {
     const { children, className, styleProps } = props;
     return (
-        <HeaderContainer style={styleProps} className={className}>
+        <Container style={styleProps} className={className}>
             {children}
-        </HeaderContainer>
+        </Container>
     );
 };
 
-const HeaderContainer = styled.header`
+const Container = styled.div`
     margin: 0;
     padding: 0;
     display: flex;

@@ -28,7 +28,25 @@ interface FlexProps {
     alignItems?: AlignItems;
     justifyContent?: JustifyContent;
     justifySelf?: JustifySelf;
+    position?: Position;
+    padding?: string;
+    margin?: string;
+    width?: string;
+    height?: string;
+    backgroundColor?: string;
+    color?: string;
+    borderRadius?: string;
+    boxShadow?: string;
 }
+
+type Position =
+    | 'static'
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'sticky'
+    | 'initial'
+    | 'inherit';
 
 export const SectionContainerFlex: React.FC<SectionContainerFlexProps> = (
     props: SectionContainerFlexProps

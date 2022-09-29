@@ -15,7 +15,20 @@ interface StyleProps {
     backgroundColor?: string;
     width?: string;
     height?: string;
+    position?: Position;
+    color?: string;
+    borderRadius?: string;
+    boxShadow?: string;
 }
+
+type Position =
+    | 'static'
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'sticky'
+    | 'initial'
+    | 'inherit';
 export const Grid: React.FC<GridProps> = (props: GridProps) => {
     const { className, children, styleProps } = props;
     return (
@@ -31,5 +44,4 @@ const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    background-color: #00468b;
 `;
