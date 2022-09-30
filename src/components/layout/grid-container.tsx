@@ -19,6 +19,7 @@ interface StyleProps {
     color?: string;
     borderRadius?: string;
     boxShadow?: string;
+    gap?: string;
 }
 
 type Position =
@@ -42,6 +43,6 @@ const GridContainer = styled.div`
     margin: 0;
     padding: 1rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); */
     gap: 1rem;
 `;

@@ -35,7 +35,6 @@
             margin: 0.15rem 1rem;
             font-size: 1.5rem;
             font-weight: 700;
-            width: 4rem;
             height: 6rem;
 
             .contact-info-link {
@@ -50,10 +49,11 @@
                 }
             }
         }
-        .contact-info-item:nth-child(1) {
-            color: #ff0060;
-        }
     }
+}
+
+.skills-container {
+    height: 65vh;
 }
 
 .introduction-tag-line {
@@ -69,4 +69,19 @@
 
 .introduction-tag-line {
     margin-top: 0.5rem;
+}
+
+.skills-details-text {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+@for $i from 1 through 15 {
+    .skills-details-text {
+        &:nth-child(#{$i}) {
+            font-size: random(3) + rem;
+        }
+    }
 }

@@ -8,7 +8,11 @@ import { Grid } from './components/layout/grid-container';
 import { HeaderFlex } from './components/layout/header-flex';
 import { FooterContainerFlex } from './components/layout/footer-container-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
+import { Link } from './components/elements/link';
+import { skills } from './utils/objects/skills/skills';
+import { links } from './utils/objects/links/links';
 import './scss/App.scss';
+import { brotliDecompress } from 'zlib';
 
 interface Data {
     Title: string;
@@ -88,34 +92,18 @@ const App = () => {
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">
-                        <li className="contact-info-item">
-                            <a
-                                href="javascript:void(
-                                        window.open(
-                                        'https://form.jotform.com/222714074095151',
-                                        'blank',
-                                        'scrollbars=yes,
-                                        toolbar=no,
-                                        width=700,
-                                        height=500,
-                                        margin=auto'
-                                        )
-                                    )
-                                    "
-                                className="contact-info-link"
-                            >
-                                Email
-                            </a>
-                        </li>
-                        <li className="contact-info-item">
-                            <a
-                                href="https://github.com/michael-mclaughlin"
-                                className="contact-info-link"
-                                target="_blank"
-                            >
-                                GitHub
-                            </a>
-                        </li>
+                        {links.map((link) => {
+                            return (
+                                <li className="contact-info-item">
+                                    <Link
+                                        href={link.href}
+                                        className="contact-info-link"
+                                    >
+                                        {link.text}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
             </HeaderFlex>
@@ -141,166 +129,59 @@ const App = () => {
                     </h2>
                 </div>
             </SectionContainerFlex>
-            <SectionContainerFlex className="introduction-container">
+            <SectionContainerFlex className="skills-container">
                 <DivContainerFlex
                     className="inset-div"
                     styleProps={{
-                        flexFlow: 'row wrap',
                         color: '#000000',
                         padding: '1rem',
                         width: '100%',
                         backgroundColor: '#ffffff',
                     }}
                 >
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
+                    <Grid
+                        className="skills-grid"
+                        styleProps={{
+                            gridTemplateColumns: 'repeat(6, 1fr)',
+                            width: '100%',
+                            gap: '0.25rem',
+                            height: 'fit-content',
                         }}
-                        className="introduction-details-text"
                     >
-                        UX Design
-                    </p>
-
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        UX Development
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Visual design
-                    </p>
-
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        CCP(AWS)
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        React
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        TypeScript
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Javascript
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        jQuery
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        SCSS
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Styled Components
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Sketch
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Adobe Creative Suite
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Cypress.io
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        AxeCore
-                    </p>
-                    <p
-                        style={{
-                            margin: '0.5rem 0',
-                            fontFamily: 'Verdana',
-                        }}
-                        className="introduction-details-text"
-                    >
-                        Pally
-                    </p>
+                        {skills.map((skill) => {
+                            return (
+                                <p className="skills-details-text">{skill}</p>
+                            );
+                        })}
+                    </Grid>
                 </DivContainerFlex>
             </SectionContainerFlex>
             <SectionContainerFlex
                 styleProps={{
                     flexFlow: 'row wrap',
-                    backgroundColor: '#003971',
-                    padding: '1rem',
+                    backgroundColor: '#000000',
+                    padding: '5rem 1rem',
+                    alignItems: 'center',
                 }}
                 className="grid-example-container"
             >
-                <h2 style={{ color: '#ff0060' }}>
+                <h2
+                    style={{
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        width: '100%',
+                    }}
+                >
                     Retreving data from an api and displaying it to bowser
                 </h2>
-                <Grid className="grid-container" styleProps={{ width: '100%' }}>
+                <Grid
+                    className="grid-container"
+                    styleProps={{
+                        width: '100%',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gridTemplateRows: 'repeat(1, 1fr)',
+                    }}
+                >
                     {userData?.Search.map((d, index) => {
                         return (
                             <Card

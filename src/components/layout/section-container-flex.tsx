@@ -23,6 +23,15 @@ type JustifyContent =
     | 'space-evenly';
 
 type JustifySelf = 'stretch' | 'center' | 'start' | 'end';
+type Position =
+    | 'static'
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'sticky'
+    | 'initial'
+    | 'inherit';
+
 interface FlexProps {
     flexFlow?: FlexFlow;
     alignItems?: AlignItems;
@@ -38,16 +47,6 @@ interface FlexProps {
     borderRadius?: string;
     boxShadow?: string;
 }
-
-type Position =
-    | 'static'
-    | 'absolute'
-    | 'fixed'
-    | 'relative'
-    | 'sticky'
-    | 'initial'
-    | 'inherit';
-
 export const SectionContainerFlex: React.FC<SectionContainerFlexProps> = (
     props: SectionContainerFlexProps
 ) => {
