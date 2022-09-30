@@ -137,6 +137,7 @@ const App = () => {
                         padding: '1rem',
                         width: '100%',
                         backgroundColor: '#ffffff',
+                        alignItems: 'center',
                     }}
                 >
                     <Grid
@@ -145,7 +146,7 @@ const App = () => {
                             gridTemplateColumns: 'repeat(6, 1fr)',
                             width: '100%',
                             gap: '0.25rem',
-                            height: 'fit-content',
+                            height: '65vh',
                         }}
                     >
                         {skills.map((skill) => {
@@ -160,7 +161,7 @@ const App = () => {
                 styleProps={{
                     flexFlow: 'row wrap',
                     backgroundColor: '#000000',
-                    padding: '5rem 1rem',
+                    padding: '4rem 1rem',
                     alignItems: 'center',
                 }}
                 className="grid-example-container"
@@ -170,6 +171,7 @@ const App = () => {
                         color: '#ffffff',
                         textAlign: 'center',
                         width: '100%',
+                        fontSize: '2.5rem',
                     }}
                 >
                     Retreving data from an api and displaying it to bowser
