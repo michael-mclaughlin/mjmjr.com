@@ -11,8 +11,8 @@ import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link } from './components/elements/link';
 import { skills } from './utils/objects/skills/skills';
 import { links } from './utils/objects/links/links';
+import { Popup } from './components/composed/popup';
 import './scss/App.scss';
-import { brotliDecompress } from 'zlib';
 
 interface Data {
     Title: string;
@@ -212,6 +212,50 @@ const App = () => {
                             </Card>
                         );
                     })}
+                </Grid>
+            </SectionContainerFlex>
+            <SectionContainerFlex
+                className="component-example-container"
+                styleProps={{
+                    backgroundColor: '#ffffff',
+                    border: '1px sold red',
+                    height: '100vh',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <Grid
+                    className="grid-container"
+                    styleProps={{
+                        width: '100%',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gridTemplateRows: 'repeat(1, 1fr)',
+                        margin: '0 6rem',
+                    }}
+                >
+                    <Popup
+                        openComponent={<div>Open</div>}
+                        closeComponent={<div>Close</div>}
+                        width="15rem"
+                        position="bottom"
+                        hasHeader={false}
+                    >
+                        <div style={{ width: 'fit-content' }}>
+                            Content Goes here
+                        </div>
+                    </Popup>
+                    <Popup
+                        openComponent={<div>Open</div>}
+                        closeComponent={<div>Close</div>}
+                        width="15rem"
+                        position="left"
+                        hasHeader={true}
+                        query="Title goes here"
+                    >
+                        <div style={{ width: 'fit-content' }}>
+                            Content Goes here
+                        </div>
+                    </Popup>
                 </Grid>
             </SectionContainerFlex>
             <FooterContainerFlex className="form-container">

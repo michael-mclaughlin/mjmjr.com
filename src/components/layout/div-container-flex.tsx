@@ -5,6 +5,7 @@ interface DivContainerFlexProps {
     children: React.ReactNode;
     className: string;
     styleProps?: FlexProps;
+    id?: string;
 }
 type FlexFlow =
     | 'row'
@@ -12,7 +13,7 @@ type FlexFlow =
     | 'column'
     | 'column-reverse'
     | 'row wrap'
-    | 'no-wrap';
+    | 'row nowrap';
 type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'stretch';
 type JustifyContent =
     | 'flex-start'
@@ -23,9 +24,18 @@ type JustifyContent =
     | 'space-evenly';
 
 type JustifySelf = 'stretch' | 'center' | 'start' | 'end';
+type Position =
+    | 'static'
+    | 'absolute'
+    | 'fixed'
+    | 'relative'
+    | 'sticky'
+    | 'initial'
+    | 'inherit';
+
 interface FlexProps {
-    flexFlow?: FlexFlow;
-    alignItems?: AlignItems;
+    flexFlow?: FlexFlow | string;
+    alignItems?: AlignItems | string;
     justifyContent?: JustifyContent;
     justifySelf?: JustifySelf;
     position?: Position;
@@ -37,17 +47,16 @@ interface FlexProps {
     color?: string;
     borderRadius?: string;
     boxShadow?: string;
+    fontSize?: string;
+    minHeight?: string;
+    letterSpacing?: string;
+    cursor?: string;
+    textDecoration?: string;
+    marginTop?: string;
+    marginRight?: string;
+    marginBottom?: string;
+    marginLeft?: string;
 }
-
-type Position =
-    | 'static'
-    | 'absolute'
-    | 'fixed'
-    | 'relative'
-    | 'sticky'
-    | 'initial'
-    | 'inherit';
-
 export const DivContainerFlex: React.FC<DivContainerFlexProps> = (
     props: DivContainerFlexProps
 ) => {
