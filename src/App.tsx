@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from './components/composed/card';
 import { AppContainer } from './components/layout/app-container';
@@ -12,7 +12,11 @@ import { Link } from './components/elements/link';
 import { skills } from './utils/objects/skills/skills';
 import { links } from './utils/objects/links/links';
 import { Popup } from './components/composed/popup';
+import { Form } from './components/composed/form';
+import { ParallaxContainer } from './components/layout/parallax-container';
 import './scss/App.scss';
+import './scss/material-ui-overrides.scss';
+import img from './images/bouldering.png';
 
 interface Data {
     Title: string;
@@ -119,34 +123,42 @@ const App = () => {
                 <div>
                     <h2
                         style={{
-                            color: '#ffffff',
+                            color: ' #ff0060',
                             margin: 0,
                             padding: 0,
                             fontSize: '5rem',
                         }}
                     >
-                        Design Technologist
+                        Design
+                        <span style={{ color: '#ffffff', marginLeft: '1rem' }}>
+                            Technologist
+                        </span>
                     </h2>
                 </div>
             </SectionContainerFlex>
-            <SectionContainerFlex className="skills-container">
+            <ParallaxContainer
+                className="parallax-skills"
+                styleProps={{
+                    background: `url(${img}) center`,
+                    backgroundSize: '100%',
+                    backgroundAttachment: 'fixed',
+                    width: '100%',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
                 <DivContainerFlex
-                    className="inset-div"
+                    className="skills-text-container"
                     styleProps={{
-                        color: '#000000',
-                        padding: '1rem',
+                        flexFlow: 'row nowrap',
                         width: '100%',
-                        backgroundColor: '#ffffff',
-                        alignItems: 'center',
                     }}
                 >
                     <Grid
-                        className="skills-grid"
+                        className="skills-details-grid container"
                         styleProps={{
-                            gridTemplateColumns: 'repeat(6, 1fr)',
-                            width: '100%',
-                            gap: '0.25rem',
-                            height: '65vh',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            backgroundColor: '#ffffff',
+                            width: '50%',
                         }}
                     >
                         {skills.map((skill) => {
@@ -156,13 +168,12 @@ const App = () => {
                         })}
                     </Grid>
                 </DivContainerFlex>
-            </SectionContainerFlex>
+            </ParallaxContainer>
             <SectionContainerFlex
                 styleProps={{
-                    flexFlow: 'row wrap',
+                    flexFlow: 'column',
                     backgroundColor: '#000000',
                     padding: '4rem 1rem',
-                    alignItems: 'center',
                 }}
                 className="grid-example-container"
             >
@@ -174,45 +185,64 @@ const App = () => {
                         fontSize: '2.5rem',
                     }}
                 >
-                    Retreving data from an api and displaying it to bowser
+                    Working with data
                 </h2>
-                <Grid
-                    className="grid-container"
-                    styleProps={{
-                        width: '100%',
-                        gridTemplateColumns: 'repeat(4, 1fr)',
-                        gridTemplateRows: 'repeat(1, 1fr)',
-                    }}
+                <DivContainerFlex
+                    className="data-content-container"
+                    styleProps={{ alignItems: 'flex-start' }}
                 >
-                    {userData?.Search.map((d, index) => {
-                        return (
-                            <Card
-                                key={`${d.imdbID}-${index}`}
-                                id={`${d.imdbID}-${index}`}
-                                className="movie-card"
-                                title={d.Title}
-                                headingSize="1rem"
-                                footerChildren={
-                                    <div className="metadata-container">
-                                        <div>{d.imdbID}</div>
-                                        <div>{d.Year}</div>
-                                        <div>{d.Type}</div>
-                                    </div>
-                                }
-                            >
-                                {d.Poster === notAvailable ? (
-                                    'No data avaliable'
-                                ) : (
-                                    <Image
-                                        src={d.Poster}
-                                        alt={d.Title}
-                                        width="6.25rem"
-                                    />
-                                )}
-                            </Card>
-                        );
-                    })}
-                </Grid>
+                    <Grid
+                        className="grid-container"
+                        styleProps={{
+                            width: '50%',
+                            gridTemplateColumns: 'repeat(2, 1fr)',
+                        }}
+                    >
+                        {userData?.Search.map((d, index) => {
+                            return (
+                                <Card
+                                    key={`${d.imdbID}-${index}`}
+                                    id={`${d.imdbID}-${index}`}
+                                    className="movie-card"
+                                    title={d.Title}
+                                    headingSize="1rem"
+                                    footerChildren={
+                                        <div className="metadata-container">
+                                            <div>{d.imdbID}</div>
+                                            <div>{d.Year}</div>
+                                            <div>{d.Type}</div>
+                                        </div>
+                                    }
+                                >
+                                    {d.Poster === notAvailable ? (
+                                        'No data avaliable'
+                                    ) : (
+                                        <Image
+                                            src={d.Poster}
+                                            alt={d.Title}
+                                            width="6.25rem"
+                                        />
+                                    )}
+                                </Card>
+                            );
+                        })}
+                    </Grid>
+                    <Form
+                        id="movie-form"
+                        className="application-movie-form"
+                        title="Add your movie"
+                        headingSize="2rem"
+                        styleProps={{
+                            backgroundColor: '#ffffff',
+                            border: '0.25rem solid #ffffff',
+                            color: '#000000',
+                            height: '30rem',
+                            flexFlow: 'column',
+                            width: '50%',
+                            margin: '1rem',
+                        }}
+                    />
+                </DivContainerFlex>
             </SectionContainerFlex>
             <SectionContainerFlex
                 className="component-example-container"

@@ -1,6 +1,12 @@
 .App {
     font-family: Helvetica, Verdana, sans-serif;
     background-color: #e1dfde;
+    display: flex;
+    flex-flow: column;
+
+    * {
+        box-sizing: border-box;
+    }
 }
 .metadata-container {
     align-self: flex-end;
@@ -53,7 +59,7 @@
 }
 
 .skills-container {
-    height: 65vh;
+    background-color: transparent;
 }
 
 .introduction-tag-line {
@@ -81,7 +87,7 @@
 @for $i from 1 through 15 {
     .skills-details-text {
         &:nth-child(#{$i}) {
-            font-size: random(3) + rem;
+            font-size: random(2) + rem;
         }
     }
 }

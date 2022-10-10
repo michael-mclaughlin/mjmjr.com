@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface SectionContainerFlexProps {
-    children: React.ReactNode;
+interface ParallaxFlexProps {
+    children?: React.ReactNode;
     className: string;
-    styleProps?: FlexProps;
+    styleProps?: StyleProps;
+    id?: string;
+    img?: string;
 }
 type FlexFlow =
     | 'row'
@@ -32,9 +34,9 @@ type Position =
     | 'initial'
     | 'inherit';
 
-interface FlexProps {
-    flexFlow?: FlexFlow;
-    alignItems?: AlignItems;
+interface StyleProps {
+    flexFlow?: FlexFlow | string;
+    alignItems?: AlignItems | string;
     justifyContent?: JustifyContent;
     justifySelf?: JustifySelf;
     position?: Position;
@@ -46,21 +48,31 @@ interface FlexProps {
     color?: string;
     borderRadius?: string;
     boxShadow?: string;
+    fontSize?: string;
+    minHeight?: string;
+    letterSpacing?: string;
+    cursor?: string;
+    textDecoration?: string;
+    marginTop?: string;
+    marginRight?: string;
+    marginBottom?: string;
+    marginLeft?: string;
     border?: string;
+    background?: string;
+    backgroundSize?: string;
+    backgroundAttachment?: string;
+    transform?: string;
+    backgroundRepeat?: string;
 }
-export const SectionContainerFlex: React.FC<SectionContainerFlexProps> = (
-    props: SectionContainerFlexProps
+export const ParallaxContainer: React.FC<ParallaxFlexProps> = (
+    props: ParallaxFlexProps
 ) => {
     const { children, className, styleProps } = props;
     return (
-        <Section style={styleProps} className={className}>
+        <Container style={styleProps} className={className}>
             {children}
-        </Section>
+        </Container>
     );
 };
 
-const Section = styled.section`
-    margin: 0;
-    padding: 0;
-    display: flex;
-`;
+const Container = styled.div``;

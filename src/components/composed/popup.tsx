@@ -108,17 +108,7 @@ export const Popup: React.FC<{
                                         }}
                                         id="view-link"
                                         className="container"
-                                    >
-                                        <DivContainerFlex
-                                            styleProps={{
-                                                flexFlow: 'row nowrap',
-                                                color: '#000000',
-                                            }}
-                                            className="parent-container"
-                                        >
-                                            X
-                                        </DivContainerFlex>
-                                    </DivContainerFlex>
+                                    ></DivContainerFlex>
                                 </div>
                             </DivContainerFlex>
                         )}
@@ -193,17 +183,7 @@ export const Popup: React.FC<{
                                         }}
                                         id="view-link"
                                         className="container"
-                                    >
-                                        <DivContainerFlex
-                                            styleProps={{
-                                                flexFlow: 'row nowrap',
-                                                color: '#000000',
-                                            }}
-                                            className="container"
-                                        >
-                                            X
-                                        </DivContainerFlex>
-                                    </DivContainerFlex>
+                                    ></DivContainerFlex>
                                 </div>
                             </DivContainerFlex>
                         )}
@@ -232,15 +212,17 @@ export const Popup: React.FC<{
                             <DivContainerFlex
                                 styleProps={{
                                     borderRadius: '0.25rem',
-                                    padding: '1.5rem 1.5rem 0.5rem',
+                                    padding: '0.5rem 1.5rem 0.5rem',
                                     fontSize: '0.75rem',
                                     color: '#000000',
                                     minHeight: '2.75rem',
                                     height: 'fit-content',
                                     alignItems: 'center',
-                                    justifyContent: 'flex-start',
+                                    // justifyContent: 'flex-start',
                                     letterSpacing: '0.25px',
-                                    width: '100%',
+                                    // width: '100%',
+                                    width: 'inherit',
+                                    border: '1px solid red',
                                 }}
                                 className="container"
                             >
@@ -276,17 +258,7 @@ export const Popup: React.FC<{
                                         }}
                                         id="view-link"
                                         className="container"
-                                    >
-                                        <DivContainerFlex
-                                            styleProps={{
-                                                flexFlow: 'row nowrap',
-                                                color: '#000000',
-                                            }}
-                                            className="container"
-                                        >
-                                            X
-                                        </DivContainerFlex>
-                                    </DivContainerFlex>
+                                    ></DivContainerFlex>
                                 </div>
                             </DivContainerFlex>
                         )}

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface DivContainerFlexProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className: string;
     styleProps?: FlexProps;
     id?: string;
@@ -56,6 +56,8 @@ interface FlexProps {
     marginRight?: string;
     marginBottom?: string;
     marginLeft?: string;
+    border?: string;
+    transform?: string;
 }
 export const DivContainerFlex: React.FC<DivContainerFlexProps> = (
     props: DivContainerFlexProps
