@@ -63,6 +63,10 @@ interface StyleProps {
     backgroundAttachment?: string;
     transform?: string;
     backgroundRepeat?: string;
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
 }
 export const ParallaxContainer: React.FC<ParallaxFlexProps> = (
     props: ParallaxFlexProps

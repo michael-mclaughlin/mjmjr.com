@@ -9,14 +9,15 @@ import { HeaderFlex } from './components/layout/header-flex';
 import { FooterContainerFlex } from './components/layout/footer-container-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link } from './components/elements/link';
-import { skills } from './utils/objects/skills/skills';
+// import { skills } from './utils/objects/skills/skills';
+import { highLevelSkills } from './utils/objects/skills/skills';
 import { links } from './utils/objects/links/links';
 import { Popup } from './components/composed/popup';
 import { Form } from './components/composed/form';
 import { ParallaxContainer } from './components/layout/parallax-container';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
-import img from './images/bouldering.png';
+import img from './images/close-up-leaf.png';
 
 interface Data {
     Title: string;
@@ -80,6 +81,8 @@ const App = () => {
                     padding: '1rem',
                     height: '2rem',
                     justifyContent: 'space-between',
+                    position: 'fixed',
+                    width: '100%',
                 }}
             >
                 <h1
@@ -117,51 +120,95 @@ const App = () => {
                     backgroundColor: '#000000',
                     height: '100vh',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    padding: '2rem',
                 }}
             >
                 <div>
+                    <p
+                        style={{
+                            color: '#ffffff',
+                            fontSize: '5rem',
+                            margin: 0,
+                            padding: 0,
+                            fontWeight: 600,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Hello, My name is Mike.
+                    </p>
                     <h2
                         style={{
                             color: ' #ff0060',
                             margin: 0,
                             padding: 0,
                             fontSize: '5rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
                         }}
                     >
-                        Design
-                        <span style={{ color: '#ffffff', marginLeft: '1rem' }}>
-                            Technologist
+                        <span
+                            style={{
+                                color: '#ffffff',
+                                fontWeight: 600,
+                                fontSize: '5rem',
+                            }}
+                        >
+                            I'm a
+                        </span>{' '}
+                        Design Technologist{' '}
+                        <span
+                            style={{
+                                color: '#ffffff',
+                                fontWeight: 600,
+                                fontSize: '5rem',
+                            }}
+                        >
+                            that
                         </span>
                     </h2>
+                    <p
+                        style={{
+                            color: '#ffffff',
+                            fontSize: '5rem',
+                            margin: 0,
+                            padding: 0,
+                            fontWeight: 600,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        creates digital experiences.
+                    </p>
                 </div>
             </SectionContainerFlex>
             <ParallaxContainer
                 className="parallax-skills"
                 styleProps={{
-                    background: `url(${img}) center`,
-                    backgroundSize: '100%',
+                    background: `center / cover content-box url(${img})`,
                     backgroundAttachment: 'fixed',
                     width: '100%',
                     backgroundRepeat: 'no-repeat',
+                    // height: '100vh',
                 }}
             >
                 <DivContainerFlex
                     className="skills-text-container"
                     styleProps={{
-                        flexFlow: 'row nowrap',
+                        flexFlow: 'column',
                         width: '100%',
                     }}
                 >
                     <Grid
                         className="skills-details-grid container"
                         styleProps={{
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            backgroundColor: '#ffffff',
+                            gridTemplateColumns: 'repeat(1, 1fr)',
+                            color: '#ffffff',
                             width: '50%',
+                            // margin: 'auto',
+                            backgroundColor: '#ffffff',
+                            padding: '2rem 0 2rem 2.1rem',
                         }}
                     >
-                        {skills.map((skill) => {
+                        {highLevelSkills.map((skill) => {
                             return (
                                 <p className="skills-details-text">{skill}</p>
                             );

@@ -58,6 +58,13 @@ interface FlexProps {
     marginLeft?: string;
     border?: string;
     transform?: string;
+    background?: string;
+    backgroundAttachment?: string;
+    backgroundRepeat?: string;
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
 }
 export const DivContainerFlex: React.FC<DivContainerFlexProps> = (
     props: DivContainerFlexProps

@@ -18,3 +18,12 @@ export const skills = [
     'AxeCore',
     'pa11y',
 ];
+
+export const highLevelSkills = [
+    'UX Development',
+    'UX Design',
+    'Visual Design',
+    'Cypress.io',
+    'AxeCore',
+    'CCP(AWS)',
+];

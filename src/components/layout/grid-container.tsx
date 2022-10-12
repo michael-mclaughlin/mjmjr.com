@@ -20,6 +20,10 @@ interface StyleProps {
     borderRadius?: string;
     boxShadow?: string;
     gap?: string;
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
 }
 
 type Position =

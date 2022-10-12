@@ -1,5 +1,5 @@
 .App {
-    font-family: Helvetica, Verdana, sans-serif;
+    font-family: Helvetica, Verdana, Georgia, sans-serif;
     background-color: #e1dfde;
     display: flex;
     flex-flow: column;
@@ -82,12 +82,17 @@
     margin: 0.5rem 0;
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    // justify-content: center;
+    // color: #ff0060;
+    // color: #ffffff;
+    color: #000000;
 }
-@for $i from 1 through 15 {
-    .skills-details-text {
-        &:nth-child(#{$i}) {
-            font-size: random(2) + rem;
-        }
-    }
-}
+// @for $i from 1 through 15 {
+//     .skills-details-text {
+//         &:nth-child(#{$i}) {
+//             font-size: random(2) + rem;
+//         }
+//     }
+// }
