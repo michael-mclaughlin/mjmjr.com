@@ -77,17 +77,23 @@
     margin-top: 0.5rem;
 }
 
-.skills-details-text {
+.skills-details-text,
+.skills-details-text-heading {
     padding: 0.5rem;
-    margin: 0.5rem 0;
+    margin: 2rem;
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 700;
-    // justify-content: center;
-    // color: #ff0060;
-    // color: #ffffff;
-    color: #000000;
+    color: #ffffff;
+}
+.about-me-text {
+    padding: 0.5rem;
+    margin: 0.5rem 2rem;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 // @for $i from 1 through 15 {
 //     .skills-details-text {

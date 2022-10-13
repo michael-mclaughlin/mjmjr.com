@@ -47,6 +47,7 @@ interface FlexProps {
     borderRadius?: string;
     boxShadow?: string;
     border?: string;
+    background?: string;
 }
 export const SectionContainerFlex: React.FC<SectionContainerFlexProps> = (
     props: SectionContainerFlexProps
