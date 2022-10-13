@@ -312,6 +312,15 @@ const App = () => {
                     </Grid> */}
                 </DivContainerFlex>
             </ParallaxContainer>
+            <SectionContainerFlex
+                className="component-example-container"
+                styleProps={{
+                    backgroundColor: '#000000',
+                    height: '100vh',
+                }}
+            >
+                Text goes here
+            </SectionContainerFlex>
             {/* <SectionContainerFlex
                 styleProps={{
                     flexFlow: 'column',
