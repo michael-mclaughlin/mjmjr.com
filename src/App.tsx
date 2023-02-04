@@ -39,13 +39,13 @@ const App = () => {
                     Mike Mclaughlin
                 </h1>
                 <div className="contact-info-container">
-                    <ul className="contact-info-list">
+                    <ul className="contact-info-link-list">
                         {links.map((link) => {
                             return (
-                                <li className="contact-info-item">
+                                <li className="contact-info-link-list-item">
                                     <Link
                                         href={link.href}
-                                        className="contact-info-link"
+                                        className="contact-info-links"
                                         target="_blank"
                                     >
                                         {link.text}
