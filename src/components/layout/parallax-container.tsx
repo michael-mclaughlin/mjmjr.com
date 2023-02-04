@@ -67,6 +67,7 @@ interface StyleProps {
     right?: string;
     bottom?: string;
     left?: string;
+    filter?: string;
 }
 export const ParallaxContainer: React.FC<ParallaxFlexProps> = (
     props: ParallaxFlexProps

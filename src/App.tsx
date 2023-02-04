@@ -5,11 +5,12 @@ import { FooterContainerFlex } from './components/layout/footer-container-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link } from './components/elements/link';
 import { links } from './utils/objects/links/links';
-import {about} from './utils/objects/links/about'
+import { about } from './utils/objects/links/about'
 import { ParallaxContainer } from './components/layout/parallax-container';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
-import img from './images/close-up-leaf.png';
+// import img from './images/close-up-leaf.png';
+import img from './images/climbing-wall.png';
 
 
 const App = () => {
@@ -39,13 +40,13 @@ const App = () => {
                     Mike Mclaughlin
                 </h1>
                 <div className="contact-info-container">
-                    <ul className="contact-info-link-list">
+                    <ul className="contact-info-list">
                         {links.map((link) => {
                             return (
-                                <li className="contact-info-link-list-item">
+                                <li className="contact-info-item">
                                     <Link
                                         href={link.href}
-                                        className="contact-info-links"
+                                        className="contact-info-link"
                                         target="_blank"
                                     >
                                         {link.text}
@@ -66,10 +67,10 @@ const App = () => {
                 }}
             >
                 <div>
-                    <p
+                    {/* <p
                         style={{
                             color: '#ffffff',
-                            fontSize: '5rem',
+                            fontSize: '2rem',
                             margin: 0,
                             padding: 0,
                             fontWeight: 600,
@@ -77,36 +78,66 @@ const App = () => {
                         }}
                     >
                         Hello, <br /> My name is Mike and
-                    </p>
+                    </p> */}
                     <h2
                         style={{
-                            color: ' #ff0060',
+                            color: '#ffffff',
                             margin: 0,
                             padding: 0,
-                            fontSize: '5rem',
+                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
                         }}
                     >
-                        <span
-                            style={{
-                                color: '#ffffff',
-                                fontWeight: 600,
-                                fontSize: '5rem',
-                            }}
-                        >
-                            I'm a
-                        </span>{' '}
+                        UX Design
+                    </h2>
+                    <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: 0,
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Visual Design
+                    </h2>
+                    <h2
+                        style={{
+                            color: '#ff0060',
+                            margin: 0,
+                            padding: 0,
+                            fontSize: '6rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
                         Design Technologist
-                        <span
-                            style={{
-                                color: '#ffffff',
-                                fontWeight: 600,
-                                fontSize: '5rem',
-                            }}
-                        >
-                            .
-                        </span>
+                    </h2>
+                    <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: 0,
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Web Accessibility
+                    </h2>
+                    <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: 0,
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        UI Development
                     </h2>
                 </div>
             </SectionContainerFlex>
@@ -117,6 +148,7 @@ const App = () => {
                     backgroundAttachment: 'fixed',
                     width: '100%',
                     backgroundRepeat: 'no-repeat',
+                    // filter: 'grayscale(100%)',
                 }}
             >
                 <DivContainerFlex
@@ -125,7 +157,7 @@ const App = () => {
                         flexFlow: 'column',
                         width: '100%',
                         marginTop: '10rem',
-                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 62%, rgba(0,0,0,0) 95%',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 95%',
                     }}
                 >
                     <DivContainerFlex
@@ -140,7 +172,7 @@ const App = () => {
                         </h2>
                         <DivContainerFlex
                             className="about-me-text-container"
-                            styleProps={{ flexFlow: 'column', width: '50%' }}
+                            styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
                         >
                             {about.map((ab)=> {
                                 return <p className="about-me-text" key={ab.id}>{ab.text}</p>

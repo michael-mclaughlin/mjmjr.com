@@ -8,7 +8,7 @@ export const links = [
         href: 'https://github.com/michael-mclaughlin',
     },
     {
-        text: 'About',
+        text: 'Work',
         href: '#',
     },
 ];

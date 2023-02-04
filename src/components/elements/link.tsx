@@ -142,7 +142,7 @@ const LinkContainer = styled.a`
     border-bottom: 0.25rem solid transparent;
     color: #ffffff;
     &:hover {
-        font-size: 2rem;
+        color: #ff0060;
         border-bottom: 0.25rem solid #ff0060;
     }
 `;
