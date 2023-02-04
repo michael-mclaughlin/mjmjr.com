@@ -76,7 +76,7 @@ const App = () => {
                             letterSpacing: '1px',
                         }}
                     >
-                        Hello, My name is Mike.
+                        Hello, <br /> My name is Mike and
                     </p>
                     <h2
                         style={{
@@ -108,18 +108,6 @@ const App = () => {
                             .
                         </span>
                     </h2>
-                    <p
-                        style={{
-                            color: '#ffffff',
-                            fontSize: '5rem',
-                            margin: 0,
-                            padding: 0,
-                            fontWeight: 600,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        I love creating digital experiences.
-                    </p>
                 </div>
             </SectionContainerFlex>
             <ParallaxContainer
@@ -137,12 +125,12 @@ const App = () => {
                         flexFlow: 'column',
                         width: '100%',
                         marginTop: '10rem',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 62%, rgba(0,0,0,0) 95%',
                     }}
                 >
                     <DivContainerFlex
                         className="about-me-text"
                         styleProps={{
-                            background: 'linear-gradient(transparent, #000)',
                             flexFlow: 'column',
                         }}
                     >
@@ -163,15 +151,6 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
-            <SectionContainerFlex
-                className="component-example-container"
-                styleProps={{
-                    backgroundColor: '#000000',
-                    height: '100vh',
-                }}
-            >
-                Text goes here
-            </SectionContainerFlex>
             <FooterContainerFlex className="form-container">
                 Thanks for connecting with me.
             </FooterContainerFlex>

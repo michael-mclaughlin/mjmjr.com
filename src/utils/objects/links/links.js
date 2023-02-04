@@ -8,8 +8,7 @@ export const links = [
         href: 'https://github.com/michael-mclaughlin',
     },
     {
-        text: 'Resumé',
-        href: 'https://github.com/michael-mclaughlin/resume/blob/main/Michael-Mclaughlin-resume-2022-updated.pdf',
-        download: 'resume.pdf',
+        text: 'About',
+        href: '#',
     },
 ];

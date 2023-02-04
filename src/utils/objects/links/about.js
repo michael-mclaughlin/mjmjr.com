@@ -1,12 +1,12 @@
 export const about = [
     {
-        text: `I went to university to study for a Bachelor of
-        Fine Arts degree in the 90's at Rowan
-        University. I had a successful career as a fine
-        artist and jewelry designer for sevaral years
-        after university in Philadelphia Pensylvania. I
+        text: `In the 90's I went to Rowan University to study 
+        for a Bachelor of fine arts degree majoring in fine and 
+        studio arts and jewelry design. I had a successful career as a fine
+        artist and jewelry designer for several years
+        after university in Philadelphia Pennsylvania. I
         decided to make a huge life shift and move to
-        San Diego California in 2001. For the next 8
+        San Diego California in 2001 and for the next 8
         years I lived as a Jewelry designer/Painter and
         night bartender. I moved to Austin Texas in 2009
         to go back to school for a degree in UX Design
@@ -32,7 +32,7 @@ export const about = [
     {
         text: `I have a pitbull named Monkey who is my shadow.
         I am an avid boulderer and enjoy climbing
-        whenever I get the opportunity. I still enjoy
+        whenever I get an opportunity. I still enjoy
         designing jewelry and painting on the side but
         being a design technologist is my passion.`,
         id: '3',
