@@ -8,12 +8,21 @@ interface CardProps {
     className: string;
     headingSize?: string;
     styleProps?: StyleProps;
+    footerFlexFlowDirection?: string;
 }
 
 interface StyleProps {
     width?: string;
     height?: string;
     boxShadow?: string;
+    backgroundColor?: string;
+    color?: string;
+    border?: string;
+    borderTop?: string;
+    borderRight?: string;
+    borderBottom?: string;
+    borderLeft?: string;
+    borderRadius?: string;
 }
 export const Card: React.FC<CardProps> = (
     props: CardProps
@@ -26,6 +35,7 @@ export const Card: React.FC<CardProps> = (
         className,
         headingSize,
         styleProps,
+        footerFlexFlowDirection,
     } = props;
     return (
         <ArticleContainer style={styleProps} id={id} className={className}>
@@ -40,7 +50,7 @@ export const Card: React.FC<CardProps> = (
                 </Section>
             </Main>
             <Footer>
-                <FooterChildContainer className="footer-children-div">
+                <FooterChildContainer className="footer-children-div" style={{ flexFlow: `${footerFlexFlowDirection}`}}>
                     {footerChildren}
                 </FooterChildContainer>
             </Footer>
@@ -54,7 +64,6 @@ const ArticleContainer = styled.article`
     border: 1px solid #f4e9e9;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 3px 4px 7px 1px rgba(0, 0, 0, 0.35);
     background-color: #ffffff;
 `;
 
@@ -69,8 +78,8 @@ const Header = styled.header`
 `;
 
 const Main = styled.main`
-    border-bottom: 1px solid #cccccc;
-    border-top: 1px solid #cccccc;
+    // border-bottom: 1px solid #cccccc;
+    // border-top: 1px solid #cccccc;
 `;
 
 const Section = styled.section`
@@ -83,6 +92,7 @@ const Footer = styled.footer`
 const FooterChildContainer = styled.div`
     display: flex;
     height: inherit;
+    margin: 0.25rem 0
 `;
 
 const ChildrenContainer = styled.div``;

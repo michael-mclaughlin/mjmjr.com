@@ -30,7 +30,7 @@ export const about = [
         id: '2',
     },
     {
-        text: `I have a pitbull named Monkey who is my shadow.
+        text: `I have a Staforshire Terrier named Goober who is my shadow.
         I am an avid boulderer and enjoy climbing
         whenever I get an opportunity. I still enjoy
         designing jewelry and painting on the side but

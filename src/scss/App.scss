@@ -1,6 +1,6 @@
 .App {
     font-family: Helvetica, Verdana, Georgia, sans-serif;
-    background-color: #e1dfde;
+    background-color: #ffffff;
     display: flex;
     flex-flow: column;
 
@@ -82,4 +82,13 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: #ffffff;
+}
+
+.code-sample-text-explanation {
+    padding: 0.5rem;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+
 }

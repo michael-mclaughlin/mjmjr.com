@@ -47,6 +47,9 @@ type TextDecoration =
     | 'revert'
     | 'revert-layer'
     | 'unset';
+type TextAlign = 
+    | 'left'
+    | 'right'
 
 type Display =
     | 'block'
@@ -90,6 +93,7 @@ interface StyleProps {
     color?: string;
     backgroundColor?: string;
     textDecoration?: TextDecoration | string;
+    textAlign?: TextAlign;
     display?: Display | string;
     flexFlow?: FlexFlow;
     alignItems?: AlignItems;

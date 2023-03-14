@@ -1,3 +1,4 @@
+// import React, { useState} from 'react'
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
@@ -5,15 +6,30 @@ import { FooterContainerFlex } from './components/layout/footer-container-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link } from './components/elements/link';
 import { links } from './utils/objects/links/links';
-import { about } from './utils/objects/links/about'
+import { code } from './utils/objects/links/code-links';
+import { work } from './utils/objects/links/work-links';
+import { about } from './utils/objects/links/about';
 import { ParallaxContainer } from './components/layout/parallax-container';
+import { Grid } from './components/layout/grid-container';
+import { Card } from './components/composed/card';
+// import { Popup } from './components/composed/popup';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
-// import img from './images/close-up-leaf.png';
 import img from './images/climbing-wall.png';
+import codeImage from './images/code.jpg';
 
 
 const App = () => {
+    // const [values, setValues] = useState({password: "password", showPassword: false});
+    // const handleClickShowPassword = () => {
+    //     setValues({...values, showPassword: !values.showPassword});
+    // }
+    // const handleMouseDownShowPassword = (event: React.MouseEvent) => {
+    //     event.preventDefault();
+    // }
+    // const handlePasswordChange = (prop: string, event: { target: {value: string}}) => {
+    //     setValues({...values, [prop]: event?.target.value})
+    // }
     return (
         <AppContainer className="App">
             <HeaderFlex
@@ -67,18 +83,6 @@ const App = () => {
                 }}
             >
                 <div>
-                    {/* <p
-                        style={{
-                            color: '#ffffff',
-                            fontSize: '2rem',
-                            margin: 0,
-                            padding: 0,
-                            fontWeight: 600,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        Hello, <br /> My name is Mike and
-                    </p> */}
                     <h2
                         style={{
                             color: '#ffffff',
@@ -148,7 +152,6 @@ const App = () => {
                     backgroundAttachment: 'fixed',
                     width: '100%',
                     backgroundRepeat: 'no-repeat',
-                    // filter: 'grayscale(100%)',
                 }}
             >
                 <DivContainerFlex
@@ -183,7 +186,112 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
+            <SectionContainerFlex className='body-of-work'>
+                {work.map((workLink) => {
+                    return (
+                        <Card 
+                            className='code-example-card' 
+                            id={workLink.text} title={workLink.text} 
+                            footerFlexFlowDirection='row-reverse' 
+                            footerChildren={
+                            <Link
+                                href={workLink.href}
+                                className="code-sample-link"
+                                target="_blank"
+                                styleProps={{textAlign: 'right'}} 
+                            >
+                                Go to the code
+                                </Link>} 
+                            styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
+                            <p>{workLink.explanation}</p>
+                        </Card>
+                    );
+                })}
+                <Card id='vioski-demo' title='Vioski Furniture' className='vioski-demo card' footerChildren={'link to prototype'}>
+                    <div>here you go</div>
+                </Card>
+                <Card id='indeed-roadmapping' title='UX Roadmapping' className='experimentation-roadmapping-demo card' footerChildren={
+<a href="mailto:mjmjr@fastmail.com.com?subject=Requesting%20a%20demo">Request a Demo</a>}>
+                    <div>here you go</div>
+                </Card>
+                <Card id='indeed-ui-development' title='UI Development' className='ui-development-demo card' footerChildren={
+<a href="mailto:mjmjr@fastmail.com?subject=Requesting%20a%20demo">Request a Demo</a>}>
+                    <div>here you go</div>
+                </Card>
+            </SectionContainerFlex>
+            
+            <ParallaxContainer
+                className="parallax-skills"
+                styleProps={{
+                    background: `center / cover content-box url(${codeImage})`,
+                    backgroundAttachment: 'fixed',
+                    width: '100%',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <DivContainerFlex
+                    className="skills-text-container"
+                    styleProps={{
+                        flexFlow: 'column',
+                        width: '100%',
+                        marginTop: '10rem',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 95%',
+                    }}
+                >
+                    <DivContainerFlex
+                        className="about-me-text"
+                        styleProps={{
+                            flexFlow: 'column',
+                        }}
+                    >
+                       <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: 0,
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Code Samples
+                    </h2>
+                    <p className="code-sample-text-explanation">Here are all of the components code I wrote to make this website portfolio happen. I have supplied a component list for others to use as they see fit. I believe in sharing code in an open sourced way so enjoy! All of the components are written in TypeScript and styled components.</p>
+                        <DivContainerFlex
+                            className="about-me-text-container"
+                            styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
+                        >
+                            <Grid className='code-sample-container-grid'>
+                                {code.map((codeLink) => {
+                                    return (
+                                        
+                                        <Card 
+                                            className='code-example-card' 
+                                            id={codeLink.text} title={codeLink.text} 
+                                            footerFlexFlowDirection='row-reverse' 
+                                            footerChildren={
+                                            <Link
+                                                href={codeLink.href}
+                                                className="code-sample-link"
+                                                target="_blank"
+                                                styleProps={{textAlign: 'right'}} 
+                                            >
+                                                Go to the code
+                                                </Link>} 
+                                            styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
+                                            <p>{codeLink.explanation}</p>
+                                        </Card>
+                                    )
+                                })}
+                                </Grid>
+                            
+                                
+                        </DivContainerFlex>
+                    </DivContainerFlex>
+                </DivContainerFlex>
+            </ParallaxContainer>
             <FooterContainerFlex className="form-container">
+                {/* <Popup openComponent='Open' closeComponent='Close' position='top' hasHeader={true} width='5rem'></Popup> */}
                 Thanks for connecting with me.
             </FooterContainerFlex>
         </AppContainer>

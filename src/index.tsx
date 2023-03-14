@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+    <script type="text/javascript" src="https://form.jotform.com/222714074095151"></script>
   </React.StrictMode>
 );
 
