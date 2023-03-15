@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import { Box, Flex, IndeedThemeProvider } from '@indeed/ifl-components';
 import { DivContainerFlex } from '../layout/div-container-flex';
-// import { SectionContainerFlex } from '../layout/section-container-flex';
 import styled from 'styled-components';
-// import Close from '@indeed/ifl-icons/Close';
+
 type Position = 'left' | 'right' | 'top' | 'bottom';
 type HasHeader = true | false;
 
@@ -15,7 +13,9 @@ export const Popup: React.FC<{
     dataCy?: string;
     openComponent: React.ReactNode;
     closeComponent: React.ReactNode;
-    width: string;
+    width?: string;
+    height?: string;
+    fontSize?: string;
     position: Position;
     hasHeader: HasHeader;
 }> = ({
@@ -26,6 +26,8 @@ export const Popup: React.FC<{
     openComponent,
     closeComponent,
     width,
+    height,
+    fontSize,
     position,
     hasHeader,
 }) => {
@@ -57,7 +59,7 @@ export const Popup: React.FC<{
             case 'bottom':
                 return (
                     <BoxContainer
-                        styleProps={{ width: `${width}` }}
+                        styleProps={{ width: `${width}`, height: `${height}`}}
                         className="parent-container"
                     >
                         {hasHeader === true && (
@@ -132,7 +134,7 @@ export const Popup: React.FC<{
             case 'top':
                 return (
                     <TopBoxContainer
-                        styleProps={{ width: `${width}` }}
+                        styleProps={{ width: `${width}`, height: `${height}`}}
                         className="parent-container"
                     >
                         {hasHeader === true && (
@@ -205,7 +207,7 @@ export const Popup: React.FC<{
             case 'left':
                 return (
                     <LeftBoxContainer
-                        styleProps={{ width: `${width}` }}
+                        styleProps={{ width: `${width}`, height: `${height}` }}
                         className="parent-container"
                     >
                         {hasHeader === true && (
@@ -218,10 +220,9 @@ export const Popup: React.FC<{
                                     minHeight: '2.75rem',
                                     height: 'fit-content',
                                     alignItems: 'center',
-                                    // justifyContent: 'flex-start',
+                                    justifyContent: 'flex-start',
                                     letterSpacing: '0.25px',
-                                    // width: '100%',
-                                    width: 'inherit',
+                                    width: '100%',
                                     border: '1px solid red',
                                 }}
                                 className="container"
@@ -280,7 +281,7 @@ export const Popup: React.FC<{
             case 'right':
                 return (
                     <RightBoxContainer
-                        styleProps={{ width: `${width}` }}
+                        styleProps={{ width: `${width}`, height: `${height}` }}
                         className="parent-container"
                     >
                         {hasHeader === true && (
@@ -376,7 +377,7 @@ export const Popup: React.FC<{
                         backgroundColor: 'transparent',
                         padding: 'unset',
                         cursor: 'pointer',
-                        fontSize: '0.75rem',
+                        fontSize: `${fontSize}`,
                         textDecoration: 'none',
                         height: '26px',
                         alignItems: 'center',
@@ -425,6 +426,7 @@ const BoxContainer = styled(DivContainerFlex)`
     min-width: 12rem;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
+    overflow: auto;
     &::before {
         position: absolute;
         z-index: -1;
@@ -454,6 +456,7 @@ const TopBoxContainer = styled(DivContainerFlex)`
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     bottom: 100%;
+    overflow: auto;
     &::before {
         position: absolute;
         z-index: -1;
@@ -484,6 +487,7 @@ const LeftBoxContainer = styled(DivContainerFlex)`
     margin-bottom: 1.2rem;
     border-radius: 0.5rem;
     right: 100%;
+    overflow: auto;
     &::before {
         position: absolute;
         z-index: -1;
@@ -514,6 +518,7 @@ const RightBoxContainer = styled(DivContainerFlex)`
     margin-bottom: 1.2rem;
     border-radius: 0.5rem;
     left: 100%;
+    overflow: auto;
     &::before {
         position: absolute;
         z-index: -1;

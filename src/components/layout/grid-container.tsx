@@ -45,7 +45,7 @@ export const Grid: React.FC<GridProps> = (props: GridProps) => {
 
 const GridContainer = styled.div`
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 2.5rem;
     display: grid;
     gap: 1rem;
 `;

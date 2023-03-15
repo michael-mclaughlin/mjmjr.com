@@ -12,11 +12,15 @@ import { about } from './utils/objects/links/about';
 import { ParallaxContainer } from './components/layout/parallax-container';
 import { Grid } from './components/layout/grid-container';
 import { Card } from './components/composed/card';
-// import { Popup } from './components/composed/popup';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import JotformEmbed from 'react-jotform-embed';
+import { Popup } from './components/composed/popup';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
+import workImage from './images/online-web-design.jpg';
 
 
 const App = () => {
@@ -79,7 +83,7 @@ const App = () => {
                     backgroundColor: '#000000',
                     height: '100vh',
                     alignItems: 'center',
-                    padding: '2rem',
+                    padding: '2rem 2.5rem',
                 }}
             >
                 <div>
@@ -160,7 +164,7 @@ const App = () => {
                         flexFlow: 'column',
                         width: '100%',
                         marginTop: '10rem',
-                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 95%',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 95%',
                     }}
                 >
                     <DivContainerFlex
@@ -186,40 +190,136 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
-            <SectionContainerFlex className='body-of-work'>
-                {work.map((workLink) => {
+            {/* <SectionContainerFlex className='boo'>
+
+            </SectionContainerFlex> */}
+
+            {/* <ParallaxContainer
+                className="parallax-skills"
+                styleProps={{
+                    background: `center / cover content-box url(${workImage})`,
+                    backgroundAttachment: 'fixed',
+                    width: '100%',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <DivContainerFlex
+                    className="skills-text-container"
+                    styleProps={{
+                        flexFlow: 'column',
+                        width: '100%',
+                        marginTop: '10rem',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 92%, rgba(0,0,0,0) 100%',
+                    }}
+                >
+                    <DivContainerFlex
+                        className="about-me-text"
+                        styleProps={{
+                            flexFlow: 'column',
+                        }}
+                    >
+                       <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: '0 2.5rem',
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Work Samples
+                    </h2>
+                    <p className="code-sample-text-explanation">Here are a few examples of work. The UX Roadmapping and the UI Development cards have proprietary information related to working at Indeed so they are not publicly available. Please click the 'Request a Demo' link for a demo.</p>
+                        <DivContainerFlex
+                            className="about-me-text-container"
+                            styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
+                        >
+                            <Grid className='code-sample-container-grid'>
+                            {work.map((workLink) => {
                     return (
                         <Card 
                             className='code-example-card' 
                             id={workLink.text} title={workLink.text} 
                             footerFlexFlowDirection='row-reverse' 
                             footerChildren={
-                            <Link
-                                href={workLink.href}
-                                className="code-sample-link"
-                                target="_blank"
-                                styleProps={{textAlign: 'right'}} 
-                            >
-                                Go to the code
-                                </Link>} 
+                                workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
+                                                        <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
+                                                      </Popup> : null} 
                             styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                             <p>{workLink.explanation}</p>
                         </Card>
                     );
                 })}
-                <Card id='vioski-demo' title='Vioski Furniture' className='vioski-demo card' footerChildren={'link to prototype'}>
-                    <div>here you go</div>
-                </Card>
-                <Card id='indeed-roadmapping' title='UX Roadmapping' className='experimentation-roadmapping-demo card' footerChildren={
-<a href="mailto:mjmjr@fastmail.com.com?subject=Requesting%20a%20demo">Request a Demo</a>}>
-                    <div>here you go</div>
-                </Card>
-                <Card id='indeed-ui-development' title='UI Development' className='ui-development-demo card' footerChildren={
-<a href="mailto:mjmjr@fastmail.com?subject=Requesting%20a%20demo">Request a Demo</a>}>
-                    <div>here you go</div>
-                </Card>
+                            </Grid>
+                        </DivContainerFlex>
+                    </DivContainerFlex>
+                </DivContainerFlex>
+            </ParallaxContainer> */}
+            <SectionContainerFlex className='body-of-work'>
+            <ParallaxContainer
+                className="parallax-skills"
+                styleProps={{
+                    background: `center / cover content-box url(${workImage})`,
+                    backgroundAttachment: 'fixed',
+                    width: '100%',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <DivContainerFlex
+                    className="skills-text-container"
+                    styleProps={{
+                        flexFlow: 'column',
+                        width: '100%',
+                        marginTop: '10rem',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 92%, rgba(0,0,0,0) 100%',
+                    }}
+                >
+                    <DivContainerFlex
+                        className="about-me-text"
+                        styleProps={{
+                            flexFlow: 'column',
+                        }}
+                    >
+                       <h2
+                        style={{
+                            color: '#ffffff',
+                            margin: 0,
+                            padding: '0 2.5rem',
+                            fontSize: '4rem',
+                            fontWeight: 800,
+                            letterSpacing: '1px',
+                        }}
+                    >
+                        Work Samples
+                    </h2>
+                    <p className="code-sample-text-explanation">Here are a few examples of work. The UX Roadmapping and the UI Development cards have proprietary information related to working at Indeed so they are not publicly available. Please click the 'Request a Demo' link for a demo.</p>
+                        <DivContainerFlex
+                            className="about-me-text-container"
+                            styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
+                        >
+                            <Grid className='code-sample-container-grid'>
+                            {work.map((workLink) => {
+                    return (
+                        <Card 
+                            className='code-example-card' 
+                            id={workLink.text} title={workLink.text} 
+                            footerFlexFlowDirection='row-reverse' 
+                            footerChildren={
+                                workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
+                                                        <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
+                                                      </Popup> : null} 
+                            styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
+                            <p>{workLink.explanation}</p>
+                        </Card>
+                    );
+                })}
+                            </Grid>
+                        </DivContainerFlex>
+                    </DivContainerFlex>
+                </DivContainerFlex>
+            </ParallaxContainer>
             </SectionContainerFlex>
-            
             <ParallaxContainer
                 className="parallax-skills"
                 styleProps={{
@@ -235,7 +335,7 @@ const App = () => {
                         flexFlow: 'column',
                         width: '100%',
                         marginTop: '10rem',
-                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 95%',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 93%, rgba(0,0,0,0) 95%',
                     }}
                 >
                     <DivContainerFlex
@@ -248,7 +348,7 @@ const App = () => {
                         style={{
                             color: '#ffffff',
                             margin: 0,
-                            padding: 0,
+                            padding: '0 2.5rem',
                             fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
@@ -283,15 +383,12 @@ const App = () => {
                                         </Card>
                                     )
                                 })}
-                                </Grid>
-                            
-                                
+                            </Grid>
                         </DivContainerFlex>
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
-            <FooterContainerFlex className="form-container">
-                {/* <Popup openComponent='Open' closeComponent='Close' position='top' hasHeader={true} width='5rem'></Popup> */}
+            <FooterContainerFlex className="footer-container" styleProps={{height: '100vh', backgroundColor: '#1a1a1a'}}>
                 Thanks for connecting with me.
             </FooterContainerFlex>
         </AppContainer>

@@ -32,6 +32,8 @@ interface FlexProps {
     color?: string;
     borderRadius?: string;
     boxShadow?: string;
+    height?: string;
+    backgroundColor?: string;
 }
 type Position =
     | 'static'
