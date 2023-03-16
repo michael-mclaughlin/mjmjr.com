@@ -1,13 +1,14 @@
-// import React, { useState} from 'react'
+import { Route, Link } from "react-router-dom";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
 import { FooterContainerFlex } from './components/layout/footer-container-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
-import { Link } from './components/elements/link';
+import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
 import { code } from './utils/objects/links/code-links';
 import { work } from './utils/objects/links/work-links';
+import { introsTitles } from './utils/objects/links/intro-titles'
 import { about } from './utils/objects/links/about';
 import { ParallaxContainer } from './components/layout/parallax-container';
 import { Grid } from './components/layout/grid-container';
@@ -21,19 +22,7 @@ import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
-
-
 const App = () => {
-    // const [values, setValues] = useState({password: "password", showPassword: false});
-    // const handleClickShowPassword = () => {
-    //     setValues({...values, showPassword: !values.showPassword});
-    // }
-    // const handleMouseDownShowPassword = (event: React.MouseEvent) => {
-    //     event.preventDefault();
-    // }
-    // const handlePasswordChange = (prop: string, event: { target: {value: string}}) => {
-    //     setValues({...values, [prop]: event?.target.value})
-    // }
     return (
         <AppContainer className="App">
             <HeaderFlex
@@ -64,13 +53,13 @@ const App = () => {
                         {links.map((link) => {
                             return (
                                 <li className="contact-info-item">
-                                    <Link
+                                    <Links
                                         href={link.href}
                                         className="contact-info-link"
                                         target="_blank"
                                     >
                                         {link.text}
-                                    </Link>
+                                    </Links>
                                 </li>
                             );
                         })}
@@ -87,66 +76,17 @@ const App = () => {
                 }}
             >
                 <div>
-                    <h2
-                        style={{
-                            color: '#ffffff',
-                            margin: 0,
-                            padding: 0,
-                            fontSize: '4rem',
-                            fontWeight: 800,
-                            letterSpacing: '1px',
-                        }}
+                    {introsTitles.map((title, index) => {
+                        return (
+                            <h2
+                            className="introsTitles"
+                            key={title.text + index}
+                            id={title.text + index}
                     >
-                        UX Design
+                        {title.text}
                     </h2>
-                    <h2
-                        style={{
-                            color: '#ffffff',
-                            margin: 0,
-                            padding: 0,
-                            fontSize: '4rem',
-                            fontWeight: 800,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        Visual Design
-                    </h2>
-                    <h2
-                        style={{
-                            color: '#ff0060',
-                            margin: 0,
-                            padding: 0,
-                            fontSize: '6rem',
-                            fontWeight: 800,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        Design Technologist
-                    </h2>
-                    <h2
-                        style={{
-                            color: '#ffffff',
-                            margin: 0,
-                            padding: 0,
-                            fontSize: '4rem',
-                            fontWeight: 800,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        Web Accessibility
-                    </h2>
-                    <h2
-                        style={{
-                            color: '#ffffff',
-                            margin: 0,
-                            padding: 0,
-                            fontSize: '4rem',
-                            fontWeight: 800,
-                            letterSpacing: '1px',
-                        }}
-                    >
-                        UI Development
-                    </h2>
+                        )
+                    })}
                 </div>
             </SectionContainerFlex>
             <ParallaxContainer
@@ -233,16 +173,19 @@ const App = () => {
                             styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
                         >
                             <Grid className='code-sample-container-grid'>
-                            {work.map((workLink) => {
+                            {work.map((workLink, index) => {
                     return (
                         <Card 
                             className='code-example-card' 
                             id={workLink.text} title={workLink.text} 
+                            key={workLink.text + index}
                             footerFlexFlowDirection='row-reverse' 
                             footerChildren={
                                 workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
                                                         <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
-                                                      </Popup> : null} 
+                                                      </Popup> : 
+                                                        <Link className="work-links-routing" to='/vioski'>Vioski Videos</Link>
+                                                    } 
                             styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                             <p>{workLink.explanation}</p>
                         </Card>
@@ -296,22 +239,24 @@ const App = () => {
                             styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
                         >
                             <Grid className='code-sample-container-grid'>
-                                {code.map((codeLink) => {
+                                {code.map((codeLink, index) => {
                                     return (
                                         
                                         <Card 
                                             className='code-example-card' 
-                                            id={codeLink.text} title={codeLink.text} 
+                                            id={codeLink.text} 
+                                            title={codeLink.text}
+                                            key={codeLink.text + index}
                                             footerFlexFlowDirection='row-reverse' 
                                             footerChildren={
-                                            <Link
+                                            <Links
                                                 href={codeLink.href}
                                                 className="code-sample-link"
                                                 target="_blank"
                                                 styleProps={{textAlign: 'right'}} 
                                             >
                                                 Go to the code
-                                                </Link>} 
+                                                </Links>} 
                                             styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                                             <p>{codeLink.explanation}</p>
                                         </Card>

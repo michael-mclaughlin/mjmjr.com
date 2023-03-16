@@ -3,13 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import VioskiPage from './vioskiPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <switch>
+      <Route path="/" exact={true}>
+          <App />
+        </Route>
+        <Route path="/vioski" exact={true}>
+            <VioskiPage/>
+        </Route>
+      </switch>
+    {/* <App /> */}
+    </Router>
     <script type="text/javascript" src="https://form.jotform.com/222714074095151"></script>
   </React.StrictMode>
 );
