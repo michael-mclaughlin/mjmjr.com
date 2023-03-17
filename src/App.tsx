@@ -174,23 +174,23 @@ const App = () => {
                         >
                             <Grid className='code-sample-container-grid'>
                             {work.map((workLink, index) => {
-                    return (
-                        <Card 
-                            className='code-example-card' 
-                            id={workLink.text} title={workLink.text} 
-                            key={workLink.text + index}
-                            footerFlexFlowDirection='row-reverse' 
-                            footerChildren={
-                                workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
-                                                        <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
-                                                      </Popup> : 
-                                                        <Link className="work-links-routing" to='/vioski'>Vioski Videos</Link>
-                                                    } 
-                            styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
-                            <p>{workLink.explanation}</p>
-                        </Card>
-                    );
-                })}
+                                return (
+                                    <Card 
+                                        className='code-example-card' 
+                                        id={workLink.text} title={workLink.text} 
+                                        key={workLink.text + index}
+                                        footerFlexFlowDirection='row-reverse' 
+                                        footerChildren={
+                                            workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
+                                                                    <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
+                                                                </Popup> : 
+                                                                    <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`}</Link>
+                                                                } 
+                                        styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
+                                        <p>{workLink.explanation}</p>
+                                    </Card>
+                                     );
+                                })}
                             </Grid>
                         </DivContainerFlex>
                     </DivContainerFlex>
