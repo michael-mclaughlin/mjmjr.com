@@ -1,27 +1,18 @@
-// import React, { useState} from 'react'
+import { Link } from "react-router-dom";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
 import { FooterContainerFlex } from './components/layout/footer-container-flex';
-// import { DivContainerFlex } from './components/layout/div-container-flex';
-import { Link } from './components/elements/link';
+import { DivContainerFlex } from './components/layout/div-container-flex';
+import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
-// import { code } from './utils/objects/links/code-links';
-// import { work } from './utils/objects/links/work-links';
-import { introsTitles } from './utils/objects/links/intro-titles'
-// import { about } from './utils/objects/links/about';
-// import { ParallaxContainer } from './components/layout/parallax-container';
-// import { Grid } from './components/layout/grid-container';
 // import { Card } from './components/composed/card';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import JotformEmbed from 'react-jotform-embed';
 // import { Popup } from './components/composed/popup';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
-// import img from './images/climbing-wall.png';
-// import codeImage from './images/code.jpg';
-// import workImage from './images/online-web-design.jpg';
+import cypressOne from './images/cypress-axe-one.png';
+import cypressTwo from './images/cypress-axe-two.png';
 
 
 const App = () => {
@@ -55,13 +46,13 @@ const App = () => {
                         {links.map((link) => {
                             return (
                                 <li className="contact-info-item">
-                                    <Link
+                                    <Links
                                         href={link.href}
                                         className="contact-info-link"
                                         target="_blank"
                                     >
                                         {link.text}
-                                    </Link>
+                                    </Links>
                                 </li>
                             );
                         })}
@@ -72,24 +63,15 @@ const App = () => {
                 className="hero-container"
                 styleProps={{
                     backgroundColor: '#000000',
-                    height: '100vh',
                     alignItems: 'center',
-                    padding: '2rem 2.5rem',
+                    padding: '10rem 2.5rem',
                 }}
             >
-                <div>
-                    {introsTitles.map((title, index) => {
-                        return (
-                            <h2
-                            className="introsTitles"
-                            key={title.text + index}
-                            id={title.text + index}
-                    >
-                        {title.text}
-                    </h2>
-                        )
-                    })}
-                </div>
+                <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column'}}>
+                    <Link to="/">Go home</Link>
+                    <img src={cypressOne} alt="first image of cypress axe" style={{ width: '100%', marginBottom: '1rem' }}/>
+                    <img src={cypressTwo} alt="second image of cypress axe" style={{ width: '100%', marginTop: '1rem' }}/>
+                </DivContainerFlex>
             </SectionContainerFlex>
             <FooterContainerFlex className="footer-container" styleProps={{height: '100vh', backgroundColor: '#1a1a1a'}}>
                 Thanks for connecting with me.

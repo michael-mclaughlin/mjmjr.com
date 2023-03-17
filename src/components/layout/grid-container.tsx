@@ -4,10 +4,11 @@ interface GridProps {
     className: string;
     children: React.ReactNode;
     styleProps?: StyleProps;
+    gridTemplateColumns?: string;
 }
 
 interface StyleProps {
-    gridTemplateColumns?: string;
+    gridTemplateColumns?: GridProps["gridTemplateColumns"];
     gridTemplateRows?: string;
     gridTemplateAreas?: string;
     margin?: string;

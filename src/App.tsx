@@ -1,4 +1,4 @@
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
@@ -22,6 +22,7 @@ import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
+import { footerInfos } from "./utils/objects/links/footer-info";
 const App = () => {
     return (
         <AppContainer className="App">
@@ -267,8 +268,24 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
-            <FooterContainerFlex className="footer-container" styleProps={{height: '100vh', backgroundColor: '#1a1a1a'}}>
-                Thanks for connecting with me.
+            <FooterContainerFlex className="footer-container" styleProps={{height: '100vh', backgroundColor: '#1a1a1a', flexFlow: 'column'}}>
+                {footerInfos.map((info, index) => {
+                        return (
+                            <DivContainerFlex className="footer-info-container">
+                                {info.jotFormSrc 
+                                    ? 
+                                    <Links className="footer-contact-link" target="_blank" href={info.jotFormSrc}>Contact Me</Links> 
+                                    : <h2 className={`footerTitles-${index}`}                                                                                                                    
+                                        key={info.text + index}
+                                        id={info.text + index}
+                                    >
+                                        {info.text}
+                                    </h2>
+                                }
+                            </DivContainerFlex>
+                            
+                        )
+                    })}
             </FooterContainerFlex>
         </AppContainer>
     );
