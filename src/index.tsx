@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import VioskiPage from './vioskiPage';
-import AccessibilityPage from './accessibility';
+import AccessibilityPage from './accessibilityPage';
+import UiPage from './uiPage';
+import IDSPage from './internalDesignSystemPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,6 +24,12 @@ root.render(
         </Route>
         <Route path="/accessibility">
           <AccessibilityPage/>
+        </Route>
+        <Route path="/ui">
+          <UiPage/>
+        </Route>
+        <Route path="/ids">
+          <IDSPage/>
         </Route>
       </switch>
     </Router>

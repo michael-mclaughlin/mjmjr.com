@@ -42,6 +42,18 @@
             font-size: 1.5rem;
             font-weight: 700;
             height: 6rem;
+
+            & .go-back-link {
+                color: #ffffff;
+                transition: font-size 0.5s, color 0.5s, border-bottom 0.5s;
+                text-decoration: none;
+                border-bottom: 0.25rem solid transparent;
+                color: #ffffff;
+                    &:hover {
+                        color: #ff0060;
+                        border-bottom: 0.25rem solid #ff0060;
+                    }
+            }
         }
     }
 }
@@ -118,6 +130,67 @@
 .footerTitles-1 {
     font-size: 1.5rem;
 }
+
+.accessibility-page-container {
+    & .examples-context-text {
+        padding: 0.5rem 2.5rem;
+        margin: 0;
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+}
+
+.go-home-link {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: font-size 0.5s, color 0.5s, border-bottom 0.5s;
+    text-decoration: none;
+    border-bottom: 0.25rem solid transparent;
+    color: #ffffff;
+    text-align: right;
+    &:hover {
+        color: #ff0060;
+        border-bottom: 0.25rem solid #ff0060;
+    }
+}
+
+.bottom-page-link {
+    flex-flow: row-reverse;
+    & .go-home-link{
+        margin: 0 2.5rem;
+    }
+    
+}
+
+.work-links-routing{
+    transition: font-size 0.5s, color 0.5s, border-bottom 0.5s;
+    text-decoration: none;
+    border-bottom: 0.25rem solid transparent;
+    color: #ffffff;
+    text-align: right;
+    &:hover {
+        color: #ff0060;
+        border-bottom: 0.25rem solid #ff0060;
+    }
+}
+
+.open-close-button {
+    transition: font-size 0.5s, color 0.5s, border-bottom 0.5s;
+    text-decoration: none;
+    border-bottom: 0.25rem solid #ffffff;
+    color: #ffffff;
+    text-align: right;
+    &:hover {
+        color: #ff0060;
+        border-bottom: 0.25rem solid #ff0060;
+    }
+}
+
 
     
 

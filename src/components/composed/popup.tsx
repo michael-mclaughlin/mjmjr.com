@@ -388,8 +388,9 @@ export const Popup: React.FC<{
                     <DivContainerFlex
                         styleProps={{
                             flexFlow: 'row nowrap',
+                            padding: '0.5rem 0'
                         }}
-                        className="container"
+                        className="container open-close-button"
                     >
                         {open ? closeComponent : openComponent}
                     </DivContainerFlex>

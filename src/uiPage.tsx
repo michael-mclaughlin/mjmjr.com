@@ -50,7 +50,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#8594; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -104,7 +104,7 @@ const App = () => {
                     <p className="examples-context-text">I designed and developed a full tutorial repo with interactivity to help solve this problem.  The repo had interactive examples where any user could clone the repo and learn following the instructions, examples and comments within the integration files to learn how to code within the integration tests and run the app so see the errors within the terminal.</p>
                 </DivContainerFlex>
                 <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
-                    
+
                 </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"

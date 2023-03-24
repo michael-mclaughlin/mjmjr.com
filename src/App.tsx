@@ -182,10 +182,10 @@ const App = () => {
                                         key={workLink.text + index}
                                         footerFlexFlowDirection='row-reverse' 
                                         footerChildren={
-                                            workLink.jotFormSrc ? <Popup openComponent='Request a demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
+                                            workLink.jotFormSrc ? <Popup className="jotform-popup" openComponent='Request a Demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
                                                                     <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
                                                                 </Popup> : 
-                                                                    <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`}</Link>
+                                                                    <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`} &#8594;</Link>
                                                                 } 
                                         styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                                         <p>{workLink.explanation}</p>
@@ -256,7 +256,7 @@ const App = () => {
                                                 target="_blank"
                                                 styleProps={{textAlign: 'right'}} 
                                             >
-                                                Go to the code
+                                                Go to the code &#8594;
                                                 </Links>} 
                                             styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                                             <p>{codeLink.explanation}</p>
