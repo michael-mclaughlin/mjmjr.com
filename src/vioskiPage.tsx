@@ -50,7 +50,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#8594; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>

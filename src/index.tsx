@@ -8,6 +8,7 @@ import VioskiPage from './vioskiPage';
 import AccessibilityPage from './accessibilityPage';
 import UiPage from './uiPage';
 import IDSPage from './internalDesignSystemPage';
+import UXPage from './uxPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,6 +31,9 @@ root.render(
         </Route>
         <Route path="/ids">
           <IDSPage/>
+        </Route>
+        <Route path="/ux">
+          <UXPage/>
         </Route>
       </switch>
     </Router>

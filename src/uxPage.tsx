@@ -5,10 +5,11 @@ import { HeaderFlex } from './components/layout/header-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
-import CyAxeOne from './images/cypress-axe-one.png';
-import CyAxeTwo from './images/cypress-axe-two.png';
+import JMBuilderOutsideSWE from './images/jm-build-develop-swe-jobseeker.jpg';
+import ABExperimentCreation from './images/ab-exp-creation.jpg';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
+import { examplesContextBuilder, experienceMapText, outcomeText } from "./utils/objects/links/examples-context-text";
 
 
 const App = () => {
@@ -82,9 +83,9 @@ const App = () => {
                     >
                         The Problem
                     </h2>
-                    <p className="examples-context-text">We wanted to use cypress integration testing to help detect any accessibility issues (programmatically) as a first step in doing our accessibility evaluations.</p>
-                    <p className="examples-context-text">The second part of the problem is that none of the automation engineers and QA's understood how to work with the cypress/cypress-axe/pa11y combo.</p>
-                </DivContainerFlex>
+                    <p className="examples-context-text">There was an a proprietary Indeed developed called Experimentation Platform that helped different users at Indeed track down, monitor and manipulate experiments that were tried in production within the UI, UX and new feature development for an application.</p>
+                    <p className="examples-context-text">The tool had not been evaluated for updates in 10 years or so.  I was asked by the UX team to help create new workflows, experience maps and roadmaps for this update.</p>
+                    </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"
                         styleProps={{
@@ -103,11 +104,31 @@ const App = () => {
                     >
                         The Solution
                     </h2>
-                    <p className="examples-context-text">I designed and developed a full tutorial repo with interactivity to help solve this problem.  The repo had interactive examples where any user could clone the repo and learn following the instructions, examples and comments within the integration files to learn how to code within the integration tests and run the app so see the errors within the terminal.</p>
+                    {examplesContextBuilder.map((exampleText) => {
+                        return (
+                            <p className={exampleText.className}>{exampleText.text}</p>
+                        );
+                    })}
                 </DivContainerFlex>
                 <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
-                    <img src={CyAxeOne} alt="cypress example with pa11y in terminal" style={{ margin: '0.75rem 0'}}/>
-                    <img src={CyAxeTwo} alt="cypress example with integration tests in terminal" style={{ margin: '0.75rem 0'}}/>
+                    <h3 style={{fontSize: '2rem', color: '#ffffff'}}>Builder: SWE from another team</h3>
+                    <img src={JMBuilderOutsideSWE} alt="experience map for a software engineer that is on  another internal team"/>
+                </DivContainerFlex>
+                <DivContainerFlex
+                        className="about-me-text"
+                        styleProps={{
+                            flexFlow: 'column',
+                        }}
+                    >
+                        {experienceMapText.map((exampleText) => {
+                            return (
+                                <p className={exampleText.className}>{exampleText.text}</p>
+                            );
+                        })}
+                </DivContainerFlex>
+                <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
+                    <h3 style={{fontSize: '2rem', color: '#ffffff'}}>Experience Map: Creation phase of experiment</h3>
+                    <img src={ABExperimentCreation} alt="experience map for the creation phase of an experiment"/>
                 </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"
@@ -127,7 +148,11 @@ const App = () => {
                     >
                         The Outcome
                     </h2>
-                    <p className="examples-context-text">Indeed leadership asked me to work with the internal accessibility council once a stable version was ready for release. They got the repo approved to be part of the internal training resources that Indeed provided to all new Automation Engineers and QA's within the company.</p>
+                    {outcomeText.map((outcome) => {
+                        return (
+                            <p className={outcome.className}>{outcome.text}</p>
+                        );
+                    })}
                 </DivContainerFlex>
                 <DivContainerFlex className="go-to-home-link-container bottom-page-link">
                     <Link className="go-home-link" to="/">&#x2190; Go Back</Link>
