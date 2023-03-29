@@ -10,7 +10,7 @@ import { codeVioski } from './utils/objects/links/code-links-vioski';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-// import vioskiVideo from './videos/vioski-video.mp4';
+import vioskiVideo from './video/vioski-video.mp4';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import { Card } from "./components/composed/card";
@@ -155,7 +155,7 @@ const App = () => {
                     </p>
                 </DivContainerFlex>
                 <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
-                {/* <video src={vioskiVideo} width="auto" height="auto" controls/> */}
+                <video src={vioskiVideo} width="auto" height="auto" controls/>
                 </DivContainerFlex>
                 <DivContainerFlex
                     className="skills-text-container"
