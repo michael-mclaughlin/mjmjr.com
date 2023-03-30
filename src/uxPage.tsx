@@ -10,9 +10,11 @@ import ABExperimentCreation from './images/ab-exp-creation.jpg';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import { examplesContextBuilder, experienceMapText, outcomeText } from "./utils/objects/links/examples-context-text";
+import {scrollToTop} from './utils/functions/scrollTo';
 
 
 const App = () => {
+    scrollToTop();
     return (
         <AppContainer className="App">
             <HeaderFlex

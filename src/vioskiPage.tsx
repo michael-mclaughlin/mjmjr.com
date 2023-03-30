@@ -18,8 +18,10 @@ import { examplesContextProblem,
 import vioskiVideo from './video/vioski-video.mp4';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
+import {scrollToTop} from './utils/functions/scrollTo';
 
 const App = () => {
+    scrollToTop();
     interface codeLinksVioski {
         text: string;
         href: string;

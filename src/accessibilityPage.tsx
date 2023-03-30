@@ -9,9 +9,11 @@ import CyAxeOne from './images/cypress-axe-one.png';
 import CyAxeTwo from './images/cypress-axe-two.png';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
+import {scrollToTop} from './utils/functions/scrollTo';
 
 
 const App = () => {
+    scrollToTop();
     return (
         <AppContainer className="App">
             <HeaderFlex

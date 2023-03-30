@@ -7,9 +7,11 @@ import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
+import {scrollToTop} from './utils/functions/scrollTo';
 
 
 const App = () => {
+    scrollToTop();
     return (
         <AppContainer className="App">
             <HeaderFlex
