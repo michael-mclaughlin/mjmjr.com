@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
@@ -25,9 +24,6 @@ import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
 import { footerInfos } from "./utils/objects/links/footer-info";
 const App = () => {
-    useEffect(() => {
-        window.scrollTo(0,0);
-    });
     return (
         <AppContainer className="App">
             <HeaderFlex
