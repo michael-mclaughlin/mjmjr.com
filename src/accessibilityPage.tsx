@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
@@ -52,7 +52,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#x2190; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Web Accessibility">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -130,7 +130,7 @@ const App = () => {
                     <p className="examples-context-text">Indeed leadership asked me to work with the internal accessibility council once a stable version was ready for release. They got the repo approved to be part of the internal training resources that Indeed provided to all new Automation Engineers and QA's within the company.</p>
                 </DivContainerFlex>
                 <DivContainerFlex className="go-to-home-link-container bottom-page-link">
-                    <Link className="go-home-link" to="/">&#x2190; Go Back</Link>
+                    <Link className="go-home-link" to="/#Web Accessibility">&#x2190; Go Back</Link>
                 </DivContainerFlex>
             </SectionContainerFlex>
         </AppContainer>

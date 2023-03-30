@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
@@ -53,7 +53,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#x2190; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#UX Roadmapping">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -155,7 +155,7 @@ const App = () => {
                     })}
                 </DivContainerFlex>
                 <DivContainerFlex className="go-to-home-link-container bottom-page-link">
-                    <Link className="go-home-link" to="/">&#x2190; Go Back</Link>
+                    <Link className="go-home-link" to="/#UX Roadmapping">&#x2190; Go Back</Link>
                 </DivContainerFlex>
             </SectionContainerFlex>
         </AppContainer>

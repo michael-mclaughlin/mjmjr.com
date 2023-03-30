@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
 import { HeaderFlex } from './components/layout/header-flex';
@@ -6,14 +6,18 @@ import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
 import { Grid } from './components/layout/grid-container';
+import { Card } from "./components/composed/card";
 import { codeVioski } from './utils/objects/links/code-links-vioski';
+import { examplesContextProblem, 
+         examplesContextSolution,
+         examplesContextOutcome
+       } from './utils/objects/links/examples-context-text-vioski';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import vioskiVideo from './video/vioski-video.mp4';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
-import { Card } from "./components/composed/card";
 
 const App = () => {
     interface codeLinksVioski {
@@ -61,7 +65,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/">&#x2190; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Vioski Furniture">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -91,9 +95,11 @@ const App = () => {
                     >
                         The Problem
                     </h2>
-                    <p className="examples-context-text">Vioski is an international contemporary custom furniture design and manufacturing studio based out of California. They cater to high end personal clients as well as corporate furniture installations for companies like Splunk and InnOcean.</p>
-                    <p className="examples-context-text">They asked me to completely revamp their legacy website (in 2016) because they were getting a lot of feedback from clients that their website doesn't match the level and quality of the furniture.</p>
-                    <p className="examples-context-text">Users also provided feedback that they were not able to navigate the website to find things easily.</p>
+                    {examplesContextProblem.map((problem) => {
+                        return (
+                            <p className={problem.className}>{problem.text}</p>
+                        )
+                    })}
                 </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"
@@ -113,23 +119,11 @@ const App = () => {
                     >
                         The Solution
                     </h2>
-                    <p 
-                        className="examples-context-text"
-                        >
-                           I was given a 1 month time-box to get the new site into production so I had to cut a couple of corners to get this done.  I didn't do any persona's or affinity mapping because I did not have access to their client base contact information.  What I had to do is do competitive market analysis of other companies and find out how their websites work, then, compare and contrast those sites to the legacy Vioski site to inform what changes and updates that need to be made.
-                    </p>
-                    <p 
-                        className="examples-context-text"
-                        >
-                            I proceeded to create a basic timeline which helped organize my work and process while giving the stakeholders of the Website routine updates and demos of the site.  I did this by creating a live prototype using github.io features which the stakeholders had access to at all times.  If they wanted to see the changes that I was working on each day they could because every change I made was pushed to the repo and updated live automatically to the prototype.
-                    </p>
-                    <p 
-                        className="examples-context-text"
-                        >
-                            I had a fairly easy time redesigning the website because the content gave me a good amount of information that I needed to complete the redesign.
-                            I was able to use minimalist design techniques combined with content centric design principles to pull the new website together.
-                            The results from the competitive analysis also gave me a good amount of insight into what works for improvements.  Below is a video of the prototype...the website is not currently in production anymore due to company reorganization.
-                    </p>
+                    {examplesContextSolution.map((solution)=>{
+                        return (
+                            <p className={solution.className}>{solution.text}</p>
+                        );
+                    })}
                 </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"
@@ -149,10 +143,11 @@ const App = () => {
                     >
                         The Outcome
                     </h2>
-                    <p className="examples-context-text">
-                        The website was released in 2016 to improved reviews from their client base and their furniture representatives.  They were able to increase sales by 2.5% month over month for 1 year. Every month after that stayed stable for the next 2 years at the first year ending percentage.
-                        In total sales increased in the year end of 2016 to over $150,000.00 more than the previous year.
-                    </p>
+                    {examplesContextOutcome.map((outcome) => {
+                        return (
+                            <p className={outcome.className}>{outcome.text}</p>
+                        );
+                    })}
                 </DivContainerFlex>
                 <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
                 <video src={vioskiVideo} width="auto" height="auto" controls/>
@@ -218,7 +213,7 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
                 <DivContainerFlex className="go-to-home-link-container bottom-page-link">
-                    <Link className="go-home-link" to="/">&#x2190; Go Back</Link>
+                    <Link className="go-home-link" to="/#Vioski Furniture">&#x2190; Go Back</Link>
                 </DivContainerFlex>
             </SectionContainerFlex>
         </AppContainer>

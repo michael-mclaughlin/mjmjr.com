@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import VioskiPage from './vioskiPage';
 import AccessibilityPage from './accessibilityPage';
 import UiPage from './uiPage';
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
-      <switch>
+      <Switch>
         <Route path="/" exact={true}>
           <App />
         </Route>
@@ -35,7 +35,7 @@ root.render(
         <Route path="/ux">
           <UXPage/>
         </Route>
-      </switch>
+      </Switch>
     </Router>
     <script type="text/javascript" src="https://form.jotform.com/222714074095151"></script>
   </React.StrictMode>
