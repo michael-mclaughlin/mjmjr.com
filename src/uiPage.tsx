@@ -7,11 +7,34 @@ import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
+import { Grid } from "./components/layout/grid-container";
+import { Card } from "./components/composed/card";
 import {scrollToTop} from './utils/functions/scrollTo';
-
-
+// import {uiWork} from './utils/objects/links/ui-video-data';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import deleteRenameTabPerViz from "./video/delete-rename-tab-per-viz-final.mp4";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import tabPerVizFinal from "./video/tab-per-viz-final.mp4";
 const App = () => {
     scrollToTop();
+    interface UIData {
+        text: string;
+        explanation: string;
+        video: string;
+    }
+    const uiVideoArray = [{
+        video: deleteRenameTabPerViz,
+        text: 'Rename and Delete tabs per visualization component',
+        explanation: "Users wanted to be able to see several data visualizations in a tabbed format. The also wanted to be able to rename and delete tabs that could be saved to the database for data persistance.",
+    },
+    {
+        video: tabPerVizFinal,
+        text: "Individual Tabs per Visualization",
+        explanation: "Users wanted a way to keep track of their tabs and visualizations immediate usable from the UI. I used React Router v5 and NavLinks to map out the visualization names and map them to the correct visualization."
+    } 
+]
     return (
         <AppContainer className="App">
             <HeaderFlex
@@ -105,9 +128,25 @@ const App = () => {
                     </h2>
                     <p className="examples-context-text">I designed and developed a full tutorial repo with interactivity to help solve this problem.  The repo had interactive examples where any user could clone the repo and learn following the instructions, examples and comments within the integration files to learn how to code within the integration tests and run the app so see the errors within the terminal.</p>
                 </DivContainerFlex>
-                <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
-
-                </DivContainerFlex>
+                        {
+                            <Grid className='code-sample-container-grid'>
+                            {uiVideoArray.map((data: UIData, index: number) => {
+                                return (
+                                    
+                                    <Card 
+                                        className='code-example-card' 
+                                        id={data.text} 
+                                        title={data.text}
+                                        key={data.text + index}
+                                        footerFlexFlowDirection='row-reverse' 
+                                        styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
+                                            <video src={data.video} key={data.text + index} width="300px" height="auto" controls/>
+                                            <p>{data.explanation}</p>
+                                    </Card>
+                                )
+                            })}
+                        </Grid>
+                        }
                 <DivContainerFlex
                         className="about-me-text"
                         styleProps={{
