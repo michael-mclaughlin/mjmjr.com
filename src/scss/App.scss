@@ -203,7 +203,19 @@
     }
 }
 
-
-    
+.home-link {
+    display: flex;
+    flex-flow: row nowrap;
+    transition: color 0.5s,border-bottom 0.5s;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    border-bottom: 0.25rem solid transparent;
+    color: #ffffff;
+    &:hover {
+        color: #ff0060;
+        border-bottom: 0.25rem solid #ff0060;
+        
+    }
+}
 
 

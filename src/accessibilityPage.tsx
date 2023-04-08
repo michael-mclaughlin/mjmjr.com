@@ -12,7 +12,7 @@ import './scss/material-ui-overrides.scss';
 import {scrollToTop} from './utils/functions/scrollTo';
 
 
-const App = () => {
+const AccessibilityPage = () => {
     scrollToTop();
     return (
         <AppContainer className="App">
@@ -27,7 +27,7 @@ const App = () => {
                     width: '100%',
                 }}
             >
-                <h1
+               <h1
                     style={{
                         color: '#ffffff',
                         margin: '0 0 0 1.75rem',
@@ -37,7 +37,7 @@ const App = () => {
                         height: 'inherit',
                     }}
                 >
-                    Mike Mclaughlin
+                    <Link className="home-link" to="/">Mike Mclaughlin</Link>
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">
@@ -131,11 +131,11 @@ const App = () => {
                     </h2>
                     <p className="examples-context-text">Indeed leadership asked me to work with the internal accessibility council once a stable version was ready for release. They got the repo approved to be part of the internal training resources that Indeed provided to all new Automation Engineers and QA's within the company.</p>
                 </DivContainerFlex>
-                <DivContainerFlex className="go-to-home-link-container bottom-page-link">
+                <DivContainerFlex className="go-to-home-link-container bottom-page-link" styleProps={{marginTop: '2.5rem'}}>
                     <Link className="go-home-link" to="/#Web Accessibility">&#x2190; Go Back</Link>
                 </DivContainerFlex>
             </SectionContainerFlex>
         </AppContainer>
     );
 };
-export default App;
+export default AccessibilityPage;

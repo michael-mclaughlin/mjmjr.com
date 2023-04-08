@@ -22,7 +22,7 @@ import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
-import { footerInfos } from "./utils/objects/links/footer-info";
+import { footerInfos, demoInfos, codeDemos } from "./utils/objects/links/footer-info";
 const App = () => {
     return (
         <AppContainer className="App">
@@ -268,24 +268,57 @@ const App = () => {
                     </DivContainerFlex>
                 </DivContainerFlex>
             </ParallaxContainer>
-            <FooterContainerFlex className="footer-container" styleProps={{height: '100vh', backgroundColor: '#1a1a1a', flexFlow: 'column'}}>
-                {footerInfos.map((info, index) => {
-                        return (
-                            <DivContainerFlex className="footer-info-container">
-                                {info.jotFormSrc 
-                                    ? 
-                                    <Links className="footer-contact-link" target="_blank" href={info.jotFormSrc}>Contact Me</Links> 
-                                    : <h2 className={`footerTitles-${index}`}                                                                                                                    
+            <FooterContainerFlex className="footer-container" styleProps={{ backgroundColor: '#1a1a1a', flexFlow: 'column', justifyContent: 'space-between'}}>
+                <h2 style={{color: '#ff0060', margin: '2.5rem 2.5rem 0.5rem', fontSize: '4rem', fontWeight: '800', letterSpacing: '1px'}}>It was great to meet you...</h2>
+                <p style={{margin: '0 2.5rem', color: '#ffffff', fontSize: '1.5rem'}}>Let me know if I can help you on your next project</p>
+                <DivContainerFlex className="demos-parent-container" styleProps={{flexFlow: 'row wrap', justifyContent: 'space-between', margin: '4.5rem 0 0'}}>
+                    <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
+                        <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Demos</h3>
+                            {footerInfos.map((info, index) => {
+                                return (
+                                    <DivContainerFlex className="footer-info-container">
+                                        <Link className="work-links-routing" style={{margin: '0.5rem 2.5rem'}} key={info.text + index} to={info.to!}>{info.text + ` Demo`} &#8594;</Link>
+                                    </DivContainerFlex>
+                                )
+                            })}
+                    </DivContainerFlex>
+                    <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
+                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Requests to Demo</h3>
+                        {demoInfos.map((info, index) => {
+                            return (
+                                <DivContainerFlex className="footer-info-container" styleProps={{margin: '0.5rem 2.5rem'}}>
+                                    <Popup className="jotform-popup" openComponent={info.text} closeComponent='Close' position='top' hasHeader={false} width='350px' height='400px'>
+                                        <JotformEmbed key={info.text + index} src={info.jotFormSrc}></JotformEmbed>
+                                    </Popup>   
+                                </DivContainerFlex>
+                                
+                            )
+                        })}
+                    </DivContainerFlex>
+                    <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
+                                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Components</h3>
+                        {codeDemos.map((info, index) => {
+                            return (
+                                <DivContainerFlex className="footer-info-container">
+                                    <Links
+                                        href={info.href}
+                                        className="code-sample-link"
+                                        target="_blank"
+                                        styleProps={{textAlign: 'right', margin: '0.5rem 2.5rem'}}
                                         key={info.text + index}
-                                        id={info.text + index}
                                     >
-                                        {info.text}
-                                    </h2>
-                                }
-                            </DivContainerFlex>
-                            
-                        )
-                    })}
+                                        {info.text} &#8594;
+                                    </Links>
+                                    
+                                </DivContainerFlex>
+                            )
+                        })}
+                    </DivContainerFlex>
+                </DivContainerFlex>
+                <DivContainerFlex className="copywrite-container" styleProps={{flexFlow: 'column', margin: '2.5rem'}}>
+                <p style={{color: '#ffffff', fontSize: '1.5rem'}}>Custom website developed using Typescript, ReactJS, StyledComponents and SCSS</p>
+                <p style={{color: '#ffffff'}}>&#169; Copywrite 2023 - Michael Mclaughlin</p>
+                </DivContainerFlex>
             </FooterContainerFlex>
         </AppContainer>
     );

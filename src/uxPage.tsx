@@ -13,7 +13,7 @@ import { examplesContextBuilder, experienceMapText, outcomeText } from "./utils/
 import {scrollToTop} from './utils/functions/scrollTo';
 
 
-const App = () => {
+const UXPage = () => {
     scrollToTop();
     return (
         <AppContainer className="App">
@@ -28,7 +28,7 @@ const App = () => {
                     width: '100%',
                 }}
             >
-                <h1
+               <h1
                     style={{
                         color: '#ffffff',
                         margin: '0 0 0 1.75rem',
@@ -38,7 +38,7 @@ const App = () => {
                         height: 'inherit',
                     }}
                 >
-                    Mike Mclaughlin
+                    <Link className="home-link" to="/">Mike Mclaughlin</Link>
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">
@@ -163,4 +163,4 @@ const App = () => {
         </AppContainer>
     );
 };
-export default App;
+export default UXPage;

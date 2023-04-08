@@ -20,7 +20,7 @@ import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import {scrollToTop} from './utils/functions/scrollTo';
 
-const App = () => {
+const VioskiPage = () => {
     scrollToTop();
     interface codeLinksVioski {
         text: string;
@@ -50,7 +50,7 @@ const App = () => {
                         height: 'inherit',
                     }}
                 >
-                    Mike Mclaughlin
+                    <Link className="home-link" to="/">Mike Mclaughlin</Link>
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">
@@ -221,4 +221,4 @@ const App = () => {
         </AppContainer>
     );
 };
-export default App;
+export default VioskiPage;

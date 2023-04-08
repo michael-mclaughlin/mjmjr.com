@@ -35,7 +35,7 @@ const App = () => {
                         height: 'inherit',
                     }}
                 >
-                    Mike Mclaughlin
+                    <Link className="home-link" to="/">Mike Mclaughlin</Link>
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">

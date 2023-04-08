@@ -8,6 +8,14 @@ export const work = [
         to: '/vioski',
     },
     {
+        text: 'Web Accessibility',
+        href: 'https://github.com/michael-mclaughlin/mjmjr.com/blob/d49516cb09b7c1e68a72f45283f8f7af1583fc11/src/components/layout/grid-container.tsx',
+        explanation:
+            'In order to reach compliance with WCAG2.0 standards, I was asked by leadership to find a way we could improve our accessibility compliance in a programmatic way. The idea I came up with was to incorporate AXECore into the automation testing process which would help increase our web accessibility compliance by 20-30%. I designed and developed an open sourced application that would help users know how to implement the AXECore technologies through tutorials',
+        jotFormSrc: '',
+        to: '/accessibility',
+    },
+    {
         text: 'UX Roadmapping',
         href: 'https://github.com/michael-mclaughlin/mjmjr.com/blob/d49516cb09b7c1e68a72f45283f8f7af1583fc11/src/components/layout/div-container-flex.tsx',
         explanation:
@@ -30,13 +38,5 @@ export const work = [
             "The client facing design system was not as flexible as the internal teams wanted so I was asked by Product leadership to spin up and start writing components for an internal design system. This is proprietary to Indeed so please use the 'Request a Demo' link.",
         jotFormSrc: 'https://form.jotform.com/230754788518166',
         to: '',
-    },
-    {
-        text: 'Web Accessibility',
-        href: 'https://github.com/michael-mclaughlin/mjmjr.com/blob/d49516cb09b7c1e68a72f45283f8f7af1583fc11/src/components/layout/grid-container.tsx',
-        explanation:
-            'This component is a layout component for a grid of elements. This component is user configurable using the styleProps attribute.',
-        jotFormSrc: '',
-        to: 'accessibility',
     },
 ];
