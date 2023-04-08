@@ -309,7 +309,6 @@ const App = () => {
                                     >
                                         {info.text} &#8594;
                                     </Links>
-                                    
                                 </DivContainerFlex>
                             )
                         })}
