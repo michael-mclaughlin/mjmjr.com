@@ -31,7 +31,6 @@ const App = () => {
                 styleProps={{
                     backgroundColor: '#000000',
                     padding: '1rem',
-                    height: '2rem',
                     justifyContent: 'space-between',
                     position: 'fixed',
                     width: '100%',
@@ -45,9 +44,10 @@ const App = () => {
                         fontSize: '1.5rem',
                         letterSpacing: '1px',
                         height: 'inherit',
+                        whiteSpace: 'nowrap',
                     }}
                 >
-                    Mike Mclaughlin
+                    <Link className="home-link" to="/">Mike Mclaughlin</Link>
                 </h1>
                 <div className="contact-info-container">
                     <ul className="contact-info-list">
@@ -105,7 +105,7 @@ const App = () => {
                         flexFlow: 'column',
                         width: '100%',
                         marginTop: '10rem',
-                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 95%',
+                        background: 'linear-gradient(0deg, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 98%',
                     }}
                 >
                     <DivContainerFlex
@@ -273,17 +273,17 @@ const App = () => {
                 <p style={{margin: '0 2.5rem', color: '#ffffff', fontSize: '1.5rem'}}>Let me know if I can help you on your next project</p>
                 <DivContainerFlex className="demos-parent-container" styleProps={{flexFlow: 'row wrap', justifyContent: 'space-between', margin: '4.5rem 0 0'}}>
                     <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
-                        <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Demos</h3>
+                        <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '2.5rem 2.5rem 1rem'}}>Demos</h3>
                             {footerInfos.map((info, index) => {
                                 return (
                                     <DivContainerFlex className="footer-info-container">
-                                        <Link className="work-links-routing" style={{margin: '0.5rem 2.5rem'}} key={info.text + index} to={info.to!}>{info.text + ` Demo`} &#8594;</Link>
+                                        <Link className="work-links-routing" style={{margin: '0.5rem 2.5rem'}} key={info.text + index} to={info.to!}>{info.text} &#8594;</Link>
                                     </DivContainerFlex>
                                 )
                             })}
                     </DivContainerFlex>
                     <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
-                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Requests to Demo</h3>
+                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '2.5rem 2.5rem 1rem'}}>Requests to Demo</h3>
                         {demoInfos.map((info, index) => {
                             return (
                                 <DivContainerFlex className="footer-info-container" styleProps={{margin: '0.5rem 2.5rem'}}>
@@ -296,7 +296,7 @@ const App = () => {
                         })}
                     </DivContainerFlex>
                     <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
-                                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '0rem 2.5rem 1.5rem 2.5rem'}}>Components</h3>
+                                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '2.5rem 2.5rem 1rem'}}>Components</h3>
                         {codeDemos.map((info, index) => {
                             return (
                                 <DivContainerFlex className="footer-info-container">

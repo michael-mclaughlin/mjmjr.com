@@ -30,14 +30,14 @@ const VioskiPage = () => {
     return (
         <AppContainer className="App">
             <HeaderFlex
-                className="app-header"
+                className="app-header vioski-app-header"
                 styleProps={{
                     backgroundColor: '#000000',
                     padding: '1rem',
-                    height: '2rem',
                     justifyContent: 'space-between',
                     position: 'fixed',
                     width: '100%',
+                    
                 }}
             >
                 <h1
@@ -67,7 +67,6 @@ const VioskiPage = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Vioski Furniture">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -75,7 +74,7 @@ const VioskiPage = () => {
                 className="accessibility-page-container"
                 styleProps={{
                     backgroundColor: '#000000',
-                    padding: '10rem 0',
+                    padding: '14rem 0',
                     flexFlow: 'column',
                 }}
             >
@@ -86,13 +85,14 @@ const VioskiPage = () => {
                         }}
                     >
                        <h2
+                       className="vioski-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '0 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         The Problem
@@ -110,13 +110,14 @@ const VioskiPage = () => {
                         }}
                     >
                        <h2
+                       className="vioski-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '3.5rem 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         The Solution
@@ -134,13 +135,14 @@ const VioskiPage = () => {
                         }}
                     >
                        <h2
+                       className="vioski-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '2.5rem 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem'
                         }}
                     >
                         The Outcome
@@ -169,14 +171,14 @@ const VioskiPage = () => {
                             flexFlow: 'column',
                         }}
                     >
-                       <h2
+                       <h2 className="vioski-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: 0,
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         Code Samples
@@ -186,7 +188,7 @@ const VioskiPage = () => {
                             className="about-me-text-container"
                             styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '2.5rem' }}
                         >
-                            <Grid className='code-sample-container-grid'>
+                            <Grid className='code-sample-container-grid vioski-grid-container'>
                                 {codeVioski.map((codeLink: codeLinksVioski, index: number) => {
                                     return (
                                         

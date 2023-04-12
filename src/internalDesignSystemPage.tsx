@@ -19,7 +19,6 @@ const App = () => {
                 styleProps={{
                     backgroundColor: '#000000',
                     padding: '1rem',
-                    height: '2rem',
                     justifyContent: 'space-between',
                     position: 'fixed',
                     width: '100%',

@@ -3,6 +3,7 @@
     background-color: #ffffff;
     display: flex;
     flex-flow: column;
+    width: 100%;
 
     * {
         box-sizing: border-box;
@@ -41,9 +42,9 @@
             margin: 0.15rem 1rem;
             font-size: 1.5rem;
             font-weight: 700;
-            height: 6rem;
+            white-space: nowrap;
 
-            & .go-back-link {
+            .go-back-link {
                 display: flex;
                 flex-flow: row nowrap;
                 white-space: nowrap;
@@ -57,6 +58,8 @@
                 background-color: #ff0060;
                 color: #ffffff;
                 border-radius: 0.25rem;
+                // margin-top: 0.5rem;
+                width: fit-content;
                     &:hover {
                         background-color: #000000;
                         border: 0.25rem solid #ffffff;
@@ -211,10 +214,109 @@
     text-decoration: none;
     border-bottom: 0.25rem solid transparent;
     color: #ffffff;
+    width: fit-content;
     &:hover {
         color: #ff0060;
         border-bottom: 0.25rem solid #ff0060;
         
+    }
+}
+
+// Media queries for responsive design
+$tabletSize: 768px;
+$largeMediumTablet: 716px;
+$largeWidthPhone: 562px;
+$mediumPhone: 510px;
+$mediumSmallPhone: 390px;
+$smallPhone: 338px;
+$extraSmallPhone: 284px;
+@media (max-width: $tabletSize) {
+    .introsTitles {
+        font-size: 3rem;
+    }
+    .introsTitles:nth-child(3) {
+        font-size: 4rem;
+    }
+    .skills-details-text-heading {
+        padding: 1.5rem 0.5rem;
+        font-size: 2rem;
+    }
+    .skills-text-container {
+        background: linear-gradient(0deg, rgb(0, 0, 0) 88%, rgba(0, 0, 0, 0) 98%);
+    }
+    .demos-container {
+        margin: 2.5rem 0;
+    }
+}
+
+@media (max-width: $largeMediumTablet) {
+    .accessibility-header {
+        flex-flow: column;
+        .contact-info-list {
+            flex-flow: column;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+    .vioski-app-header {
+        flex-flow: column;
+
+        .contact-info-list {
+            flex-flow: column;
+            padding: 1rem 0.75rem;
+        }
+    }
+    .go-back-link {
+        margin: 0.5rem 0;
+    }
+
+}
+
+@media (max-width: $largeWidthPhone) {
+    .app-header {
+        flex-flow: column;
+    }
+    .contact-info-container {
+        .contact-info-list {
+            flex-flow: column;
+            padding: 0.5rem 0.75rem;
+        }
+    } 
+    .accessibility-header {
+        flex-flow: column;
+        .contact-info-list {
+            flex-flow: column;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+}
+
+@media (max-width: $mediumPhone) {
+    .introsTitles {
+        font-size: 2rem;
+    }
+    .introsTitles:nth-child(3) {
+        font-size: 3rem;
+    }
+    .skills-details-text-heading {
+        padding: 1.5rem 0.5rem;
+        font-size: 2rem;
+    } 
+}
+
+@media (max-width: $mediumSmallPhone) {
+    .introsTitles {
+        font-size: 1.5rem;
+    }
+    .introsTitles:nth-child(3) {
+        font-size: 2.5rem;
+    }
+    .skills-details-text-heading {
+        padding: 1.5rem 0.5rem;
+        font-size: 2rem;
+    }
+    .code-sample-container-grid {
+        padding: 0;
+        margin: 0;
     }
 }
 

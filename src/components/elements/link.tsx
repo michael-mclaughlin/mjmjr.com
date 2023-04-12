@@ -145,6 +145,7 @@ const LinkContainer = styled.a`
     text-decoration: none;
     border-bottom: 0.25rem solid transparent;
     color: #ffffff;
+    width: fit-content;
     &:hover {
         color: #ff0060;
         border-bottom: 0.25rem solid #ff0060;

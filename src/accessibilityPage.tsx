@@ -17,11 +17,10 @@ const AccessibilityPage = () => {
     return (
         <AppContainer className="App">
             <HeaderFlex
-                className="app-header"
+                className="app-header accessibility-header"
                 styleProps={{
                     backgroundColor: '#000000',
                     padding: '1rem',
-                    height: '2rem',
                     justifyContent: 'space-between',
                     position: 'fixed',
                     width: '100%',
@@ -54,7 +53,6 @@ const AccessibilityPage = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Web Accessibility">&#x2190; Go Back</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
@@ -62,7 +60,7 @@ const AccessibilityPage = () => {
                 className="accessibility-page-container"
                 styleProps={{
                     backgroundColor: '#000000',
-                    padding: '10rem 0',
+                    padding: '14rem 0',
                     flexFlow: 'column',
                 }}
             >
@@ -73,13 +71,14 @@ const AccessibilityPage = () => {
                         }}
                     >
                        <h2
+                       className="accessibility-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '0 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         The Problem
@@ -94,13 +93,14 @@ const AccessibilityPage = () => {
                         }}
                     >
                        <h2
+                        className="accessibility-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '3.5rem 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         The Solution
@@ -118,13 +118,14 @@ const AccessibilityPage = () => {
                         }}
                     >
                        <h2
+                        className="accessibility-about-me-heading"
                         style={{
                             color: '#ffffff',
                             margin: '2.5rem 0 1.25rem 0',
                             padding: '0 2.5rem',
-                            fontSize: '4rem',
                             fontWeight: 800,
                             letterSpacing: '1px',
+                            fontSize: '2rem',
                         }}
                     >
                         The Outcome
