@@ -58,7 +58,6 @@
                 background-color: #ff0060;
                 color: #ffffff;
                 border-radius: 0.25rem;
-                // margin-top: 0.5rem;
                 width: fit-content;
                     &:hover {
                         background-color: #000000;
@@ -228,8 +227,7 @@ $largeMediumTablet: 716px;
 $largeWidthPhone: 562px;
 $mediumPhone: 510px;
 $mediumSmallPhone: 390px;
-$smallPhone: 338px;
-$extraSmallPhone: 284px;
+
 @media (max-width: $tabletSize) {
     .introsTitles {
         font-size: 3rem;

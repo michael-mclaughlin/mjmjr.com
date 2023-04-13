@@ -16,13 +16,13 @@ import { Card } from './components/composed/card';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import JotformEmbed from 'react-jotform-embed';
-import { Popup } from './components/composed/popup';
+import { PopupInPlace } from './components/composed/popup-in-place';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
-import { footerInfos, demoInfos, codeDemos } from "./utils/objects/links/footer-info";
+import { footerInfos, codeDemos } from "./utils/objects/links/footer-info";
 const App = () => {
     return (
         <AppContainer className="App">
@@ -182,9 +182,11 @@ const App = () => {
                                         key={workLink.text + index}
                                         footerFlexFlowDirection='row-reverse' 
                                         footerChildren={
-                                            workLink.jotFormSrc ? <Popup className="jotform-popup" openComponent='Request a Demo' closeComponent='Close' position='left' hasHeader={false} width='350px' height='400px'>
-                                                                    <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
-                                                                </Popup> : 
+                                            workLink.jotFormSrc ? 
+                                                                    <PopupInPlace hasHeader={false}className="jotform-popup" openComponent='Request a Demo' closeComponent='Close Popup' position='bottom' width='max-content' height='300px'>
+                                                                        <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
+                                                                    </PopupInPlace> 
+                                                                : 
                                                                     <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`} &#8594;</Link>
                                                                 } 
                                         styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
@@ -281,19 +283,6 @@ const App = () => {
                                     </DivContainerFlex>
                                 )
                             })}
-                    </DivContainerFlex>
-                    <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
-                    <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '2.5rem 2.5rem 1rem'}}>Requests to Demo</h3>
-                        {demoInfos.map((info, index) => {
-                            return (
-                                <DivContainerFlex className="footer-info-container" styleProps={{margin: '0.5rem 2.5rem'}}>
-                                    <Popup className="jotform-popup" openComponent={info.text} closeComponent='Close' position='top' hasHeader={false} width='350px' height='400px'>
-                                        <JotformEmbed key={info.text + index} src={info.jotFormSrc}></JotformEmbed>
-                                    </Popup>   
-                                </DivContainerFlex>
-                                
-                            )
-                        })}
                     </DivContainerFlex>
                     <DivContainerFlex className="demos-container" styleProps={{flexFlow: 'column', height: 'fit-content'}}>
                                     <h3 style={{fontSize: '1.5rem', color: '#ffffff', margin: '2.5rem 2.5rem 1rem'}}>Components</h3>

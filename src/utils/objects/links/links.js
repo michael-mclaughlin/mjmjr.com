@@ -1,7 +1,7 @@
 export const links = [
     {
         text: 'Contact Me',
-        href: 'https://form.jotform.com/222714074095151',
+        href: 'https://form.jotform.com/231024157700140',
     },
     {
         text: 'GitHub',
