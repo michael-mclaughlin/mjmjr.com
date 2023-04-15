@@ -5,9 +5,12 @@ import { HeaderFlex } from './components/layout/header-flex';
 import { DivContainerFlex } from './components/layout/div-container-flex';
 import { Link as Links } from './components/elements/link';
 import { links } from './utils/objects/links/links';
+import { Card } from "./components/composed/card";
+import { idsLinks } from './utils/objects/links/ids-links';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import {scrollToTop} from './utils/functions/scrollTo';
+import { Grid } from "./components/layout/grid-container";
 
 
 const App = () => {
@@ -51,7 +54,7 @@ const App = () => {
                                 </li>
                             );
                         })}
-                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Internal Design System">&#x2190; Go Back</Link></li>
+                        {/* <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#Internal Design System">&#x2190; Go Back</Link></li> */}
                     </ul>
                 </div>
             </HeaderFlex>
@@ -81,8 +84,10 @@ const App = () => {
                     >
                         The Problem
                     </h2>
-                    <p className="examples-context-text">We wanted to use cypress integration testing to help detect any accessibility issues (programmatically) as a first step in doing our accessibility evaluations.</p>
-                    <p className="examples-context-text">The second part of the problem is that none of the automation engineers and QA's understood how to work with the cypress/cypress-axe/pa11y combo.</p>
+                    <p className="examples-context-text"
+                        >
+                            The client facing design system wasn't flexible for the needs of internal applications so I was asked by Product leadership to spin up a new Internal design system to have an internal component library of more flexible components.
+                    </p>
                 </DivContainerFlex>
                 <DivContainerFlex
                         className="about-me-text"
@@ -102,9 +107,30 @@ const App = () => {
                     >
                         The Solution
                     </h2>
-                    <p className="examples-context-text">I designed and developed a full tutorial repo with interactivity to help solve this problem.  The repo had interactive examples where any user could clone the repo and learn following the instructions, examples and comments within the integration files to learn how to code within the integration tests and run the app so see the errors within the terminal.</p>
+                    <p className="examples-context-text">I developed an internal design system using storybook, Typescript, ReactJS, SCSS and StyledComponents that were individually releasable through npm packages.</p>
                 </DivContainerFlex>
                 <DivContainerFlex className="accessibility-examples-container" styleProps={{flexFlow: 'column', padding: '2.5rem'}}>
+                        {
+                            <Grid className='code-sample-container-grid' styleProps={{padding: '1rem 0.5rem 2.5rem'}}>
+                            {idsLinks.map((ids, index) => {
+                                return (
+                                    <Card id={ids.text + index} 
+                                        title={ids.text} 
+                                        key={ids.text + index} 
+                                        className="about-me-text ids-cards" 
+                                        styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px', color: '#ffffff'}}
+                                    >
+                                        <div style={{ width: '100%', height: '12rem', overflow: 'auto'}}>
+                                        <img src={ids.src2} alt={ids.alt} style={{ width: '100%', margin: '0.5rem 0'}}/>
+                                        <img src={ids.src} alt={ids.alt} style={{width: '100%', margin: '0.5rem 0'}}/>
+                                        </div>
+                                        
+                                        <p>{ids.explanation}</p>
+                                    </Card>
+                                )
+                            })}
+                        </Grid>
+                        }
                     
                 </DivContainerFlex>
                 <DivContainerFlex
@@ -125,7 +151,7 @@ const App = () => {
                     >
                         The Outcome
                     </h2>
-                    <p className="examples-context-text">Indeed leadership asked me to work with the internal accessibility council once a stable version was ready for release. They got the repo approved to be part of the internal training resources that Indeed provided to all new Automation Engineers and QA's within the company.</p>
+                    <p className="examples-context-text">All internal applications now have a more flexible component library for new features that were more configurable and customizable.</p>
                 </DivContainerFlex>
                 <DivContainerFlex className="go-to-home-link-container bottom-page-link">
                     <Link className="go-home-link" to="/#Internal Design System">&#x2190; Go Back</Link>
