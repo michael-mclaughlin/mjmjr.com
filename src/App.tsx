@@ -168,7 +168,7 @@ const App = () => {
                     >
                         Work Samples
                     </h2>
-                    <p className="code-sample-text-explanation">Here are a few examples of work. The UX Roadmapping and the UI Development cards have proprietary information related to working at Indeed so they are not publicly available. Please click the 'Request a Demo' link for a demo.</p>
+                    <p className="code-sample-text-explanation">Here are a few examples of work. The UX Roadmapping, UI Development and Internal Design System cards have proprietary information related to working at Indeed so they are not publicly available. Please click the 'Request a Demo' link for a demo.</p>
                         <DivContainerFlex
                             className="about-me-text-container"
                             styleProps={{ flexFlow: 'column', width: '100%', marginBottom: '10rem' }}
