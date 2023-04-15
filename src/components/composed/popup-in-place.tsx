@@ -119,7 +119,7 @@ export const PopupInPlace: React.FC<{
                             styleProps={{
                                 flexFlow: 'column',
                                 fontSize: '0.75rem',
-                                width: 'auto',
+                                width: '100%',
                                 letterSpacing: '0.25px',
                                 color: '#000000',
                                 padding: '0 1.5rem 1.5rem 1.5rem',
