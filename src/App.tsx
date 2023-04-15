@@ -15,15 +15,17 @@ import { Grid } from './components/layout/grid-container';
 import { Card } from './components/composed/card';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import JotformEmbed from 'react-jotform-embed';
-import { PopupInPlace } from './components/composed/popup-in-place';
+// import JotformEmbed from 'react-jotform-embed';
+// import { PopupInPlace } from './components/composed/popup-in-place';
 import './scss/App.scss';
 import './scss/material-ui-overrides.scss';
 import img from './images/climbing-wall.png';
 import codeImage from './images/code.jpg';
 import workImage from './images/online-web-design.jpg';
 import { footerInfos, codeDemos } from "./utils/objects/links/footer-info";
+import { useAuth } from "./auth";
 const App = () => {
+    const auth = useAuth();
     return (
         <AppContainer className="App">
             <HeaderFlex
@@ -182,13 +184,22 @@ const App = () => {
                                         key={workLink.text + index}
                                         footerFlexFlowDirection='row-reverse' 
                                         footerChildren={
-                                            workLink.jotFormSrc ? 
-                                                                    <PopupInPlace hasHeader={false}className="jotform-popup" openComponent='Request a Demo' closeComponent='Close Popup' position='bottom' width='max-content' height='300px'>
-                                                                        <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
-                                                                    </PopupInPlace> 
-                                                                : 
-                                                                    <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`} &#8594;</Link>
-                                                                } 
+                                            
+                                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                            //@ts-ignore
+                                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                                            !auth!.password && workLink.jotFormSrc ? <Link className="work-links-routing" to="/Login">Login &#8594;</Link> : <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`} &#8594;</Link>
+                                            
+                                            // workLink.jotFormSrc 
+                                            //                     ? 
+                                            //                         <PopupInPlace hasHeader={false}className="jotform-popup" openComponent='Request a Demo' closeComponent='Close Popup' position='bottom' width='max-content' height='300px'>
+                                            //                             <JotformEmbed src={workLink.jotFormSrc}></JotformEmbed>
+                                            //                         </PopupInPlace> 
+
+                                            //                     : 
+                                            //                          <Link className="work-links-routing" to={workLink.to}>{workLink.text + ` Demo`} &#8594;</Link>
+                                        
+                                        } 
                                         styleProps={{backgroundColor: '#1a1a1a', border: 'none', borderRadius: '0px'}}>
                                         <p>{workLink.explanation}</p>
                                     </Card>

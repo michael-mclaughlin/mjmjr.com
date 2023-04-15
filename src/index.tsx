@@ -9,6 +9,9 @@ import AccessibilityPage from './accessibilityPage';
 import UiPage from './uiPage';
 import IDSPage from './internalDesignSystemPage';
 import UXPage from './uxPage';
+import { AuthProvider } from './auth';
+import RequireAuth from './requireAuth';
+import Login from './login';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +20,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Switch>
+      <AuthProvider>
         <Route path="/" exact={true}>
           <App />
         </Route>
@@ -26,15 +30,20 @@ root.render(
         <Route path="/accessibility">
           <AccessibilityPage/>
         </Route>
-        <Route path="/ui">
-          <UiPage/>
-        </Route>
-        <Route path="/ids">
-          <IDSPage/>
-        </Route>
-        <Route path="/ux">
-          <UXPage/>
-        </Route>
+        
+          <Route path="/ui">
+            <RequireAuth><UiPage/></RequireAuth>
+          </Route>
+          <Route path="/ids">
+            <RequireAuth><IDSPage/></RequireAuth>
+          </Route>
+          <Route path="/ux">
+            <RequireAuth><UXPage/></RequireAuth>
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </AuthProvider>
       </Switch>
     </Router>
     <script type="text/javascript" src="https://form.jotform.com/222714074095151"></script>

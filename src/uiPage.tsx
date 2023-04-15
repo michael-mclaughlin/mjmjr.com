@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+import { useAuth } from "./auth";
 import { HashLink as Link } from "react-router-hash-link";
 import { AppContainer } from './components/layout/app-container';
 import { SectionContainerFlex } from './components/layout/section-container-flex';
@@ -18,6 +20,14 @@ const UIPage = () => {
         text: string;
         explanation: string;
         video: string;
+    }
+    const auth = useAuth();
+    const history = useHistory();
+    const handleLogOut = () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        auth.logout();
+        history.push('/');
     }
     return (
         <AppContainer className="App">
@@ -59,6 +69,7 @@ const UIPage = () => {
                             );
                         })}
                         <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="/#UI Development">&#x2190; Go Back</Link></li>
+                        <li className="contact-info-item"><Link className="contact-info-link go-back-link" to="" onClick={handleLogOut}>&#x2190; Log Out</Link></li>
                     </ul>
                 </div>
             </HeaderFlex>
